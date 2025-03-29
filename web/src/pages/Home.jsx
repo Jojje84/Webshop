@@ -1,12 +1,11 @@
 import React from 'react';
-import { products } from '../data/products';
-import ProductCard from '../components/ProductCard';
+import CategorySection from '../components/CategorySection';
 
 const Home = () => {
   return (
     <div>
-
-      </div>
+      <h1>Welcome to the Webshop</h1>
+      <CategorySection />
     </div>
   );
 };

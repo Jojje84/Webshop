@@ -1,5 +1,31 @@
+// src/data/products.js
 export const products = [
-  { id: 1, name: 'Product 1', description: 'Description for Product 1', price: 19.99 },
-  { id: 2, name: 'Product 2', description: 'Description for Product 2', price: 29.99 },
-  { id: 3, name: 'Product 3', description: 'Description for Product 3', price: 39.99 }
+  {
+    id: 1,
+    name: 'T-shirt',
+    description: 'En snygg och bekväm T-shirt i olika färger.',
+    price: 19.99,
+    image: '/images/tshirt.jpg',
+    category: 'Clothing',
+    stock: 10 // Antal produkter i lager
+  },
+  {
+    id: 2,
+    name: 'Hoodie',
+    description: 'En mjuk och varm hoodie, perfekt för kalla dagar.',
+    price: 39.99,
+    image: '/images/hoodie.jpg',
+    category: 'Clothing',
+    stock: 5 // Antal produkter i lager
+  },
+  {
+    id: 3,
+    name: 'Mug',
+    description: 'En fin mugg för morgonkaffet.',
+    price: 9.99,
+    image: '/images/mug.jpg',
+    category: 'Accessories',
+    stock: 20 // Antal produkter i lager
+  }
+  // Lägg till fler produkter här
 ];
