@@ -1,14 +1,14 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Banner from '../components/Banner'
+import React from 'react';
+import { products } from '../data/products';
+import ProductCard from '../components/ProductCard';
 
 const Home = () => {
   return (
     <div>
-      <Banner />
-      <Navbar />
-    </div>
-  )
-}
 
-export default Home
+      </div>
+    </div>
+  );
+};
+
+export default Home;

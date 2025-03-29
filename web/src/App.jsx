@@ -1,25 +1,12 @@
-import styled, { createGlobalStyle } from "styled-components"
-import Home from "./pages/Home"
+import React from 'react';
 
-const GlobalStyle = createGlobalStyle`
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-* {
-box-sizing: border-box;
-}
-`
 
 const App = () => {
   return (
-    <>
-      <GlobalStyle />
-      <Home />
-    </>
-  )
-}
+    <div>
 
-export default App
+    </div>
+  );
+};
+
+export default App;
