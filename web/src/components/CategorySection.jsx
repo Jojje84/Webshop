@@ -35,6 +35,7 @@ const CategoryWrapper = styled.div`
  
 `;
 
+
 const CategorySection = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const navigate = useNavigate();
