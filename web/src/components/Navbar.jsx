@@ -8,7 +8,6 @@ import Badge from '@mui/material/Badge'; // Importera Badge från MUI
 const NavbarContainer = styled.nav`
   height: 60px;
   margin-bottom: 20px;
-  background-color: #333;
 `;
 
 const Wrapper = styled.div`
@@ -26,6 +25,7 @@ const Left = styled.div`
   justify-content: flex-start;
   height: 100%;
   padding-left: 30px;
+  background-color: #B0B3B8;
 `;
 
 const Center = styled.div`
@@ -34,6 +34,10 @@ const Center = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+  background-color: #B0B3B8;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding-right: 10px;
 `;
 
 const SearchContainer = styled.div`
@@ -51,13 +55,24 @@ const Input = styled.input`
   width: 200px;
 `;
 
+const CenterSpace = styled.div`
+  flex-basis: 15%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+`;
+
+
 const Right = styled.div`
   flex-basis: 25%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   height: 100%;
-  margin-right: 30px;
+  background-color: #B0B3B8;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding-right: 10px;
+  justify-content: center;
 `;
 
 const Cart = styled.div`
@@ -84,6 +99,7 @@ const Navbar = () => {
             <Search style={{ color: 'gray', fontSize: 20 }} />
           </SearchContainer>
         </Center>
+        <CenterSpace />
         <Right>
           <Link to="/login" style={{ color: 'white', marginRight: '20px' }}>LOG IN</Link>
           <Cart>

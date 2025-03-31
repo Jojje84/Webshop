@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 
 const Cointainer = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     display: flex;
     position: relative;
     overflow: hidden;
