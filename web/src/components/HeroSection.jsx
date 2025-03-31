@@ -5,12 +5,14 @@ import { sliderItems } from '../data/sliderItems'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
-const Cointainer = styled.div`
+const Container = styled.div`
     width: 100%;
-    height: 70vh;
+    height: 30vh;
     display: flex;
     position: relative;
     overflow: hidden;
+    align-items: center;
+
 
 ;`
 const Arrow = styled.div`
@@ -37,6 +39,7 @@ const Wrapper = styled.div`
     display: flex;
     transition: all 1.5s ease;
     transform: translateX(${props => props.$slideIndex * -100}vw);
+    align-items: center;
 
 `;
 
@@ -52,11 +55,11 @@ const Slide = styled.div`
 
 const ImgContainer = styled.div`
     flex: 1;
-    height: 100%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+   
 `;
 
 const Img = styled.img`
@@ -113,7 +116,7 @@ const HeroSection = ({ onOpenCategories }) => {
       }, []);
 
     return (
-        <Cointainer>
+        <Container>
             <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
@@ -134,7 +137,7 @@ const HeroSection = ({ onOpenCategories }) => {
             <Arrow direction="right" onClick={() => handleClick("right")}>
                 <ArrowRightOutlined />
             </Arrow>
-        </Cointainer>
+        </Container>
     )
 }
 

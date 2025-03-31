@@ -5,7 +5,7 @@ import { Send } from '@mui/icons-material'
 
 
 const Container = styled.div`
-    height: 60vh;
+    height: 30vh;
     display: flex;
     background-color: #f5f5f5;);
     justify-content: center;

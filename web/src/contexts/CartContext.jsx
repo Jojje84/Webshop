@@ -1,11 +1,11 @@
-// src/contexts/CartContext.js
+
 import React, { createContext, useContext, useState } from 'react';
 import { products } from '../data/products'; // Importera produkterna för lagerkontroll
 
-const CartContext = createContext();
+const Container = createContext();
 
 export const useCart = () => {
-  return useContext(CartContext);
+  return useContext(Container);
 };
 
 export const CartProvider = ({ children }) => {
@@ -55,11 +55,15 @@ export const CartProvider = ({ children }) => {
     }));
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   const totalPrice = cart.reduce((total, product) => total + product.price * product.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice }}>
+    <Container.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, totalPrice }}>
       {children}
-    </CartContext.Provider>
+    </Container.Provider>
   );
 };

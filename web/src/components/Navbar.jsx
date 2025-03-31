@@ -90,7 +90,7 @@ const Navbar = () => {
       <Wrapper>
         <Left>
           <Link to="/" style={{ color: 'white', marginRight: '20px' }}>HOME</Link>
-          <Link to="/categories" style={{ color: 'white', marginRight: '20px' }}>Categories</Link>
+          <Link to="/categories" style={{ color: 'white', marginRight: '20px' }}>CATEGORIES</Link>
           <Link to="/contact" style={{ color: 'white' }}>CONTACT</Link>
         </Left>
         <Center>
