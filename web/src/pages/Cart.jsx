@@ -9,7 +9,14 @@ const Container = styled.div`
 const Title = styled.h1`
   font-weight: 200;
   text-align: center;
-
+  margin: 20px 0;
+  font-size: 24px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 `;
 
 const Cartinfo = styled.div`

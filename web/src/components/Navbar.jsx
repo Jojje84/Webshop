@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useCart } from '../contexts/CartContext';
 import { Link } from 'react-router-dom';
 import { Search, ShoppingCartOutlined } from '@mui/icons-material';
-import Badge from '@mui/material/Badge'; // Importera Badge från MUI
+import Badge from '@mui/material/Badge';
 
 const NavbarContainer = styled.nav`
   height: 60px;

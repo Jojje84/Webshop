@@ -2,20 +2,69 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useCart } from '../contexts/CartContext';
+import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 
-const Card = styled.div`
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin: 1rem;
+const Info = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+  cursor: pointer;
+`;
+
+const Container = styled.div`
+  flex: 1;
+  margin: 5px;
+  min-width: 280px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5fbfd;
+  position: relative;
+
+  &:hover ${Info} {
+    opacity: 1;
+  }
+`;
+
+const Cirkel = styled.div`
   width: 200px;
-  text-align: center;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+`;
+const Icon = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: #e9f5f5;
+    transform: scale(1.1);
+  }
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
 `;
 
 const ProductCard = ({ product }) => {
@@ -38,8 +87,20 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <Card>
+    <Container>
+       <Cirkel />
       <Image src={product.image} alt={product.name} />
+      <Info>
+        <Icon>
+          <ShoppingCartOutlined onClick={handleAddToCart}/>
+        </Icon>
+        <Icon>
+          <SearchOutlined />
+        </Icon>
+        <Icon>
+          <FavoriteBorderOutlined />
+        </Icon>
+      </Info>
       <h3>{product.name}</h3>
       <p>{product.description}</p>
       <p>${product.price}</p>
@@ -56,7 +117,7 @@ const ProductCard = ({ product }) => {
         {product.stock > 0 ? 'Add to Cart' : 'Out of Stock'}
       </button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-    </Card>
+    </Container>
   );
 };
 

@@ -2,11 +2,11 @@
 export const products = [
   {
     id: 1,
-    name: 'T-shirt',
-    description: 'En snygg och bekväm T-shirt i olika färger.',
-    price: 19.99,
-    image: '/images/tshirt.jpg',
-    category: 'Clothing',
+    name: 'Abstract Painting',
+    description: '',
+    price: 100,
+    image: '/assets/images/products/abstract/abstract1.png',
+    category: 'Abstract',
     stock: 10 // Antal produkter i lager
   },
   {

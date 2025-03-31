@@ -1,42 +1,64 @@
 import React, { useState } from 'react';
 import { products } from '../data/products';
 import ProductCard from './ProductCard';
+import styled from 'styled-components';
+import CategoryCard from './CategoryCard';
+import { categories } from '../data/categories';
+import { useNavigate } from 'react-router-dom';
+
+
+const Container = styled.div`
+  padding: 20px;
+ 
+`;  
+
+const Title = styled.h1`
+  font-weight: 200;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+`;
+
+const CategoryWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+  padding: 20px;
+ 
+`;
+
+
 
 const CategorySection = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null); // Håller reda på vald kategori
-  const categories = [...new Set(products.map(product => product.category))]; // Hämta alla unika kategorier
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const navigate = useNavigate();
 
   const handleCategoryClick = (category) => {
-    if (selectedCategory === category) {
-      setSelectedCategory(null); // Om samma kategori är klickad igen, dölja produkter
-    } else {
-      setSelectedCategory(category); // Visa produkter för vald kategori
-    }
+    setSelectedCategory(category); 
+    navigate(`/products/${category.toLowerCase()}`); 
   };
 
   return (
-    <div>
-      <h2>Categories</h2>
-      <div>
-        {/* Visa alla kategorier som klickbara */}
+    <Container>
+      <Title>Categories</Title>
+      <CategoryWrapper>
         {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => handleCategoryClick(category)}
-            style={{
-              padding: '10px',
-              margin: '10px',
-              backgroundColor: '#333',
-              color: 'white',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-            }}
-          >
-            {category}
-          </button>
+          <CategoryCard
+            key={category.name}
+            name={category.name}
+            image={category.image}
+            onClick={() => handleCategoryClick(category.name)}
+          />
         ))}
-      </div>
+      </CategoryWrapper>
 
       {/* Visa produkter för den valda kategorin */}
       {selectedCategory && (
@@ -51,7 +73,7 @@ const CategorySection = () => {
           </div>
         </div>
       )}
-    </div>
+    </Container>
   );
 };
 
