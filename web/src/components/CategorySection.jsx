@@ -29,7 +29,6 @@ const CategoryWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
   margin: 20px 0;
   padding: 20px;
  

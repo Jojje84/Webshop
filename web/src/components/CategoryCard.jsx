@@ -4,7 +4,7 @@ import React from 'react';
 
 const Container = styled.div`
   flex: 1;
-  margin: 10px;
+  margin: 5px;
   max-width: 300px;
   height: 300px;
   position: relative;
