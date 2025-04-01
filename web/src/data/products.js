@@ -26,7 +26,7 @@ export const products = [
     image: '/assets/images/products/abstract/abstract3.png',
     category: 'Abstract',
     stock: 10 // Antal produkter i lager
-  }
+  },
   {
     id: 4,
     name: 'Abstract Painting',
@@ -35,7 +35,7 @@ export const products = [
     image: '/assets/images/products/abstract/abstract4.png',
     category: 'Abstract',
     stock: 10 // Antal produkter i lager
-  }
+  },
   {
     id: 5,
     name: 'Abstract Painting',
