@@ -50,7 +50,7 @@ export const products = [
     name: 'Animal Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/animal1.png',
+    image: '/assets/images/products/animal/animal1.png',
     category: 'Animal',
     stock: 10 // Antal produkter i lager
   },
@@ -59,7 +59,7 @@ export const products = [
     name: 'Animal Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/animal2.png',
+    image: '/assets/images/products/animal/animal2.png',
     category: 'Animal',
     stock: 10 // Antal produkter i lager
   },
@@ -68,7 +68,7 @@ export const products = [
     name: 'Animal Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/animal3.png',
+    image: '/assets/images/products/animal/animal3.png',
     category: 'Animal',
     stock: 10 // Antal produkter i lager
   },
@@ -77,7 +77,7 @@ export const products = [
     name: 'Animal Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/animal4.png',
+    image: '/assets/images/products/animal/animal4.png',
     category: 'Animal',
     stock: 10 // Antal produkter i lager
   },
@@ -86,7 +86,7 @@ export const products = [
     name: 'Animal Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/animal5.png',
+    image: '/assets/images/products/animal/animal5.png',
     category: 'Animal',
     stock: 10 // Antal produkter i lager
   },
