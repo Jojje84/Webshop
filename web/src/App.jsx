@@ -1,11 +1,11 @@
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { CartProvider } from './contexts/CartContext';
-import Home from './pages/Home';
-import Cart from './pages/Cart';
-import Navbar from './components/Navbar';
-import ProductList from './pages/ProductList';
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { CartProvider } from './contexts/CartContext'
+import Home from './pages/Home'
+import Cart from './pages/Cart'
+import Navbar from './components/Navbar'
+import ProductList from './pages/ProductList'
 
 const App = () => {
   return (

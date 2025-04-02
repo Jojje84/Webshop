@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { products } from '../data/products';
-import ProductCard from './ProductCard';
-import styled from 'styled-components';
-import CategoryCard from './CategoryCard';
-import { categories } from '../data/categories';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+import { products } from '../data/products'
+import ProductCard from './ProductCard'
+import styled from 'styled-components'
+import CategoryCard from './CategoryCard'
+import { categories } from '../data/categories'
+import { useNavigate } from 'react-router-dom'
 
 
 const Container = styled.div`
@@ -34,6 +34,11 @@ const CategoryWrapper = styled.div`
  
 `;
 
+const ProductsInfo = styled.div``;
+
+const ProductsCard = styled.div``;
+
+
 
 const CategorySection = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -58,18 +63,17 @@ const CategorySection = () => {
         ))}
       </CategoryWrapper>
 
-      {/* Visa produkter för den valda kategorin */}
       {selectedCategory && (
-        <div>
-          <h3>{selectedCategory} Products</h3>
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <ProductsInfo>
+          <Title>{selectedCategory} Products</Title>
+          <ProductsCard>
             {products
               .filter(product => product.category === selectedCategory)
               .map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
-          </div>
-        </div>
+          </ProductsCard>
+        </ProductsInfo>
       )}
     </Container>
   );

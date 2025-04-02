@@ -1,14 +1,18 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import ProductsSection from '../components/ProductsSection';  // Importera ProductsSection
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import ProductsSection from '../components/ProductsSection'
+import styled from 'styled-components'
+
+const Container = styled.div``;
+
 
 const ProductList = () => {
-  const { category } = useParams();  // Hämta kategorin från URL:en
+  const { category } = useParams();
 
   return (
-    <div>
-      <ProductsSection category={category} /> {/* Skicka kategorin till ProductsSection */}
-    </div>
+    <Container>
+      <ProductsSection category={category} />
+    </Container>
   );
 };
 

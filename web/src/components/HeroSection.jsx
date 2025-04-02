@@ -1,9 +1,8 @@
+import React,{ useState, useEffect } from 'react'
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material'
-import React from 'react'
 import styled from 'styled-components'
 import { sliderItems } from '../data/sliderItems'
-import { useState } from 'react'
-import { useEffect } from 'react'
+
 
 const Container = styled.div`
     width: 100%;

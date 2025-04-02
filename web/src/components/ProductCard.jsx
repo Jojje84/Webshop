@@ -1,8 +1,7 @@
-// src/components/ProductCard.jsx
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { useCart } from '../contexts/CartContext';
-import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import { useCart } from '../contexts/CartContext'
+import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material'
 
 const Info = styled.div`
   width: 100%;

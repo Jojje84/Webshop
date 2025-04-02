@@ -1,10 +1,17 @@
-import React from 'react';
-import { products } from '../data/products'; // Hämta produkterna
-import ProductCard from './ProductCard';
-import styled from 'styled-components';
+import React from 'react'
+import { products } from '../data/products'
+import ProductCard from './ProductCard'
+import styled from 'styled-components'
 
 const Container = styled.div`
   padding: 20px;
+`;
+
+const Title = styled.h3``;
+
+const ProductCardWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const ProductsSection = ({ category }) => {
@@ -14,16 +21,17 @@ const ProductsSection = ({ category }) => {
 
   return (
     <Container>
-      <h3>{category ? `${category} Products` : 'All Products'}</h3>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <Title>{category ? `${category} Products` : 'All Products'}</Title>
+      <ProductCardWrapper>
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
+             
           ))
         ) : (
           <p>No products available in this category</p>
         )}
-      </div>
+      </ProductCardWrapper>
     </Container>
   );
 };
