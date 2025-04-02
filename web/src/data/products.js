@@ -1,4 +1,5 @@
 
+
 export const products = [
   {
     id: 1,
@@ -25,7 +26,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/abstract3.png',
     category: 'Abstract',
-    stock: 10 // Antal produkter i lager
+    stock: 10 
   },
   {
     id: 4,
@@ -51,7 +52,7 @@ export const products = [
     description: '',
     price: 1000,
     image: '/assets/images/products/animal/animal1.png',
-    category: 'Animal',
+    category: 'Animals',
     stock: 10 // Antal produkter i lager
   },
   {
@@ -60,7 +61,7 @@ export const products = [
     description: '',
     price: 1000,
     image: '/assets/images/products/animal/animal2.png',
-    category: 'Animal',
+    category: 'Animals',
     stock: 10 // Antal produkter i lager
   },
   {
@@ -69,7 +70,7 @@ export const products = [
     description: '',
     price: 1000,
     image: '/assets/images/products/animal/animal3.png',
-    category: 'Animal',
+    category: 'Animals',
     stock: 10 // Antal produkter i lager
   },
   {
@@ -78,7 +79,7 @@ export const products = [
     description: '',
     price: 1000,
     image: '/assets/images/products/animal/animal4.png',
-    category: 'Animal',
+    category: 'Animals',
     stock: 10 // Antal produkter i lager
   },
   {
@@ -87,7 +88,7 @@ export const products = [
     description: '',
     price: 1000,
     image: '/assets/images/products/animal/animal5.png',
-    category: 'Animal',
+    category: 'Animals',
     stock: 10 // Antal produkter i lager
   },
   {
@@ -450,7 +451,5 @@ export const products = [
     category: 'Warrior',
     stock: 10 // Antal produkter i lager
   }
-  
-  
-  // Lägg till fler produkter här
 ];
+

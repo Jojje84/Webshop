@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 
 const Container = styled.div`
     width: 100%;
-    height: 30vh;
+    height: 50vh;
     display: flex;
     position: relative;
     overflow: hidden;

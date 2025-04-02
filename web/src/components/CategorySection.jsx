@@ -41,7 +41,7 @@ const CategorySection = () => {
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category); 
-    navigate(`/products/${category.toLowerCase()}`); 
+    navigate(`/products/${category}`); 
   };
 
   return (

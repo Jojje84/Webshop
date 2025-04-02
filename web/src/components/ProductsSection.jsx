@@ -9,7 +9,7 @@ const Container = styled.div`
 
 const ProductsSection = ({ category }) => {
   const filteredProducts = category
-    ? products.filter(product => product.category.toLowerCase() === category.toLowerCase())
+    ? products.filter(product => product.category === category)
     : products;
 
   return (

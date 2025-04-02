@@ -63,7 +63,7 @@ const CategoryCard = ({ name, image }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/products/${name.toLowerCase()}`);
+    navigate(`/products/${name}`);
   };
 
   return (
