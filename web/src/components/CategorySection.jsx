@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
-import { products } from '../data/products'
-import ProductCard from './ProductCard'
-import styled from 'styled-components'
-import CategoryCard from './CategoryCard'
-import { categories } from '../data/categories'
-import { useNavigate } from 'react-router-dom'
-
+import React, { useState } from 'react';
+import { products } from '../data/products';
+import ProductCard from './ProductCard';
+import styled from 'styled-components';
+import CategoryCard from './CategoryCard';
+import { categories } from '../data/categories';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   padding: 20px;
- 
-`;  
+`;
 
 const Title = styled.h1`
   font-weight: 200;
@@ -31,22 +29,19 @@ const CategoryWrapper = styled.div`
   justify-content: center;
   margin: 20px 0;
   padding: 20px;
- 
 `;
 
 const ProductsInfo = styled.div``;
 
 const ProductsCard = styled.div``;
 
-
-
 const CategorySection = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const navigate = useNavigate();
 
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category); 
-    navigate(`/products/${category}`); 
+    setSelectedCategory(category);
+    navigate(`/products/${category}`);
   };
 
   return (
@@ -68,7 +63,7 @@ const CategorySection = () => {
           <Title>{selectedCategory} Products</Title>
           <ProductsCard>
             {products
-              .filter(product => product.category === selectedCategory)
+              .filter((product) => product.category === selectedCategory)
               .map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}

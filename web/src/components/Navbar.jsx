@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useCart } from '../contexts/CartContext'
-import { Link } from 'react-router-dom'
-import { Search, ShoppingCartOutlined } from '@mui/icons-material'
-import Badge from '@mui/material/Badge'
+import React from 'react';
+import styled from 'styled-components';
+import { useCart } from '../contexts/CartContext';
+import { Link } from 'react-router-dom';
+import { Search, ShoppingCartOutlined } from '@mui/icons-material';
+import Badge from '@mui/material/Badge';
 
 const NavbarContainer = styled.nav`
   height: 60px;
@@ -25,7 +25,7 @@ const Left = styled.div`
   justify-content: flex-start;
   height: 100%;
   padding-left: 30px;
-  background-color: #B0B3B8;
+  background-color: #b0b3b8;
 `;
 
 const Center = styled.div`
@@ -34,7 +34,7 @@ const Center = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: #B0B3B8;
+  background-color: #b0b3b8;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   padding-right: 10px;
@@ -62,13 +62,12 @@ const CenterSpace = styled.div`
   background-color: white;
 `;
 
-
 const Right = styled.div`
   flex-basis: 25%;
   display: flex;
   align-items: center;
   height: 100%;
-  background-color: #B0B3B8;
+  background-color: #b0b3b8;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   padding-right: 10px;
@@ -83,15 +82,26 @@ const Navbar = () => {
   const { cart } = useCart();
 
   // Beräkna totalt antal produkter i varukorgen
-  const totalItems = cart.reduce((total, product) => total + product.quantity, 0);
+  const totalItems = cart.reduce(
+    (total, product) => total + product.quantity,
+    0,
+  );
 
   return (
     <NavbarContainer>
       <Wrapper>
         <Left>
-          <Link to="/" style={{ color: 'white', marginRight: '20px' }}>HOME</Link>
-          <Link to="/categories" style={{ color: 'white', marginRight: '20px' }}>CATEGORIES</Link>
-          <Link to="/contact" style={{ color: 'white' }}>CONTACT</Link>
+          <Link to="/" style={{ color: 'white', marginRight: '20px' }}>
+            HOME
+          </Link>
+          <Link
+            to="/categories"
+            style={{ color: 'white', marginRight: '20px' }}>
+            CATEGORIES
+          </Link>
+          <Link to="/contact" style={{ color: 'white' }}>
+            CONTACT
+          </Link>
         </Left>
         <Center>
           <SearchContainer>
@@ -101,10 +111,16 @@ const Navbar = () => {
         </Center>
         <CenterSpace />
         <Right>
-          <Link to="/login" style={{ color: 'white', marginRight: '20px' }}>LOG IN</Link>
+          <Link to="/login" style={{ color: 'white', marginRight: '20px' }}>
+            LOG IN
+          </Link>
           <Cart>
-            <Link to="/cart" style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
-              <Badge badgeContent={totalItems} color="primary"> {/* Ändrad här */}
+            <Link
+              to="/cart"
+              style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
+              <Badge badgeContent={totalItems} color="primary">
+                {' '}
+                {/* Ändrad här */}
                 <ShoppingCartOutlined style={{ marginLeft: '5px' }} />
               </Badge>
             </Link>

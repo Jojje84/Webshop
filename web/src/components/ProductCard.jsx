@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import { useCart } from '../contexts/CartContext'
-import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material'
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useCart } from '../contexts/CartContext';
+import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 
 const Info = styled.div`
   width: 100%;
@@ -68,12 +68,12 @@ const Image = styled.img`
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
-  const [quantity, setQuantity] = useState(1); // Användare kan välja kvantitet
+  const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState('');
 
   const handleAddToCart = () => {
     if (quantity > 0 && quantity <= product.stock) {
-      addToCart(product, quantity); // Skicka den valda kvantiteten till addToCart
+      addToCart(product, quantity);
       setError('');
     } else {
       setError('Invalid quantity. Please select a valid quantity.');
@@ -81,17 +81,17 @@ const ProductCard = ({ product }) => {
   };
 
   const handleQuantityChange = (e) => {
-    const value = Math.max(1, Math.min(e.target.value, product.stock)); // Begränsa värdet mellan 1 och lagerantalet
+    const value = Math.max(1, Math.min(e.target.value, product.stock));
     setQuantity(value);
   };
 
   return (
     <Container>
-       <Cirkel />
+      <Cirkel />
       <Image src={product.image} alt={product.name} />
       <Info>
         <Icon>
-          <ShoppingCartOutlined onClick={handleAddToCart}/>
+          <ShoppingCartOutlined onClick={handleAddToCart} />
         </Icon>
         <Icon>
           <SearchOutlined />

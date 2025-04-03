@@ -1,6 +1,6 @@
-import React from 'react'
-import { useCart } from '../contexts/CartContext'
-import styled from 'styled-components'
+import React from 'react';
+import { useCart } from '../contexts/CartContext';
+import styled from 'styled-components';
 
 const Container = styled.div`
   padding: 20px;
@@ -24,7 +24,6 @@ const Cartinfo = styled.div`
   flex-direction: column;
   margin-top: 20px;
   padding: 20px;
-  
 `;
 
 const CartItem = styled.div`
@@ -89,14 +88,13 @@ const TotalContainer = styled.div`
   font-size: 18px;
   display: flex;
   justify-content: flex-end;
-  padding: 20px; 
+  padding: 20px;
 `;
 
 const TotalPrice = styled.span`
   font-weight: 600;
   font-size: 18px;
   color: #333;
-  
 `;
 
 const ButtonContainer = styled.div`
@@ -115,18 +113,18 @@ const RemoveAllButton = styled.button`
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
 
-
   &:hover {
     background-color: darkred;
   }
 `;
 
 const Cart = () => {
-  const { cart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice, clearCart } = useCart();
+  const { cart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice, clearCart } =
+    useCart();
 
   const handleRemoveAll = () => {
     clearCart();
-  }
+  };
   return (
     <Container>
       <Title>Your Cart</Title>
@@ -137,25 +135,28 @@ const Cart = () => {
           {cart.map((product) => (
             <CartItem key={product.id}>
               <ItemDetails>
-              <ItemInfo>
-              <span>{product.name}</span>
-              <span>Price: {product.price} x {product.quantity} = ${(product.price * product.quantity).toFixed(2)}</span>
-              <AmountContainer>
-                <AmountButton onClick={() => decreaseQuantity(product.id)}>-</AmountButton>
-                <span>{product.quantity}</span>
-                <AmountButton onClick={() => increaseQuantity(product.id)}>+</AmountButton>
-              </AmountContainer>
-              </ItemInfo>
+                <ItemInfo>
+                  <span>{product.name}</span>
+                  <span>
+                    Price: {product.price} x {product.quantity} = $
+                    {(product.price * product.quantity).toFixed(2)}
+                  </span>
+                  <AmountContainer>
+                    <AmountButton onClick={() => decreaseQuantity(product.id)}>-</AmountButton>
+                    <span>{product.quantity}</span>
+                    <AmountButton onClick={() => increaseQuantity(product.id)}>+</AmountButton>
+                  </AmountContainer>
+                </ItemInfo>
               </ItemDetails>
               <RemoveButton onClick={() => removeFromCart(product.id)}>Remove</RemoveButton>
             </CartItem>
           ))}
         </Cartinfo>
- )}
-          <TotalContainer>
-          <TotalPrice>Total Price: ${totalPrice.toFixed(2)}</TotalPrice>
-          </TotalContainer>
-          <ButtonContainer>
+      )}
+      <TotalContainer>
+        <TotalPrice>Total Price: ${totalPrice.toFixed(2)}</TotalPrice>
+      </TotalContainer>
+      <ButtonContainer>
         <RemoveAllButton onClick={handleRemoveAll}>Check out</RemoveAllButton>
       </ButtonContainer>
     </Container>

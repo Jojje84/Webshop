@@ -11,49 +11,48 @@ import warriorImg from '../assets/images/categories/warrior.png';
 import demoImg from '../assets/images/categories/demo.png';
 
 export const categories = [
-    {
-        name: 'Abstract',
-        image: abstractImg,
-    },
-    {
-      name: 'Animals',
-      image: animalsImg,
-    },
-    {
-      name: 'Anime',
-      image: animeImg,
-    },
-    {
-      name: 'Citys',
-      image: citysImg,
-    },
-    {
-      name: 'Interactive',
-      image: interactiveImg,
-    },
-    {
-      name: 'Mask',
-      image: maskImg,
-    },
-    {
-      name: 'Nature',
-      image: natureImg,
-    },
-    {
-      name: 'Portrait',
-      image: portraitImg,
-    },
-    {
-      name: 'Retro',
-      image: retroImg,
-    },
-    {
-      name: 'Warrior',
-      image: warriorImg,
-    },
-    {
-        name: 'Demo',
-        image: demoImg,
-      },
-
-  ];
+  {
+    name: 'Abstract',
+    image: abstractImg,
+  },
+  {
+    name: 'Animals',
+    image: animalsImg,
+  },
+  {
+    name: 'Anime',
+    image: animeImg,
+  },
+  {
+    name: 'Citys',
+    image: citysImg,
+  },
+  {
+    name: 'Interactive',
+    image: interactiveImg,
+  },
+  {
+    name: 'Mask',
+    image: maskImg,
+  },
+  {
+    name: 'Nature',
+    image: natureImg,
+  },
+  {
+    name: 'Portrait',
+    image: portraitImg,
+  },
+  {
+    name: 'Retro',
+    image: retroImg,
+  },
+  {
+    name: 'Warrior',
+    image: warriorImg,
+  },
+  {
+    name: 'Demo',
+    image: demoImg,
+  },
+];

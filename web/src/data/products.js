@@ -1,32 +1,30 @@
-
-
 export const products = [
   {
     id: 1,
     name: 'Abstract Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/abstract1.png',
+    image: 'abstract1.png',
     category: 'Abstract',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 2,
     name: 'Abstract Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/abstract2.png',
+    image: 'abstract2.png',
     category: 'Abstract',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 3,
     name: 'Abstract Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/abstract3.png',
+    image: '../assets/images/products/abstract/abstract3.png',
     category: 'Abstract',
-    stock: 10 
+    stock: 10,
   },
   {
     id: 4,
@@ -35,7 +33,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/abstract4.png',
     category: 'Abstract',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 5,
@@ -44,7 +42,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/abstract5.png',
     category: 'Abstract',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 6,
@@ -53,7 +51,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/animal/animal1.png',
     category: 'Animals',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 7,
@@ -62,7 +60,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/animal/animal2.png',
     category: 'Animals',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 8,
@@ -71,7 +69,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/animal/animal3.png',
     category: 'Animals',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 9,
@@ -80,7 +78,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/animal/animal4.png',
     category: 'Animals',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 10,
@@ -89,7 +87,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/animal/animal5.png',
     category: 'Animals',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 11,
@@ -98,7 +96,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/anime1.png',
     category: 'Anime',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 12,
@@ -107,7 +105,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/anime2.png',
     category: 'Anime',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 13,
@@ -116,7 +114,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/anime3.png',
     category: 'Anime',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 14,
@@ -125,7 +123,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/anime4.png',
     category: 'Still Life',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 15,
@@ -134,7 +132,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/anime5.png',
     category: 'Anime',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 16,
@@ -143,7 +141,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/citys1.png',
     category: 'Citys',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 17,
@@ -152,7 +150,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/citys2.png',
     category: 'Citys',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 18,
@@ -161,7 +159,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/citys3.png',
     category: 'Citys',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 19,
@@ -170,7 +168,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/citys4.png',
     category: 'Citys',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 20,
@@ -179,7 +177,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/citys5.png',
     category: 'Citys',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 21,
@@ -188,7 +186,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/interactive1.png',
     category: 'Interactive',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 22,
@@ -197,7 +195,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/interactive2.png',
     category: 'Interactive',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 23,
@@ -206,7 +204,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/interactive3.png',
     category: 'Interactive',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 24,
@@ -215,7 +213,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/interactive4.png',
     category: 'Interactive',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 25,
@@ -224,7 +222,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/interactive5.png',
     category: 'Interactive',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 26,
@@ -233,7 +231,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/mask1.png',
     category: 'Mask',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 27,
@@ -242,7 +240,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/mask2.png',
     category: 'Mask',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 28,
@@ -251,7 +249,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/mask3.png',
     category: 'Mask',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 29,
@@ -260,7 +258,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/mask4.png',
     category: 'Mask',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 30,
@@ -269,7 +267,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/mask5.png',
     category: 'Mask',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 31,
@@ -278,7 +276,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/nature1.png',
     category: 'Nature',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 32,
@@ -287,7 +285,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/nature2.png',
     category: 'Nature',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 33,
@@ -296,7 +294,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/nature3.png',
     category: 'Nature',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 34,
@@ -305,7 +303,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/nature4.png',
     category: 'Nature',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 35,
@@ -314,7 +312,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/nature5.png',
     category: 'Nature',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 36,
@@ -323,7 +321,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/portrait1.png',
     category: 'Portrait',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 37,
@@ -332,7 +330,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/portrait2.png',
     category: 'Portrait',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 38,
@@ -341,7 +339,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/portrait3.png',
     category: 'Portrait',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 39,
@@ -350,7 +348,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/portrait4.png',
     category: 'Portrait',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 40,
@@ -359,7 +357,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/portrait5.png',
     category: 'Portrait',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 41,
@@ -368,7 +366,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/retro1.png',
     category: 'Retro',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 42,
@@ -377,7 +375,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/retro2.png',
     category: 'Retro',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 43,
@@ -386,7 +384,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/retro3.png',
     category: 'Retro',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 44,
@@ -395,7 +393,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/retro4.png',
     category: 'Retro',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 45,
@@ -404,7 +402,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/retro5.png',
     category: 'Retro',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 46,
@@ -413,7 +411,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/warrior1.png',
     category: 'Warrior',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 47,
@@ -422,7 +420,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/warrior2.png',
     category: 'Warrior',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 48,
@@ -431,7 +429,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/warrior3.png',
     category: 'Warrior',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 49,
@@ -440,7 +438,7 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/warrior4.png',
     category: 'Warrior',
-    stock: 10 // Antal produkter i lager
+    stock: 10, // Antal produkter i lager
   },
   {
     id: 50,
@@ -449,7 +447,6 @@ export const products = [
     price: 1000,
     image: '/assets/images/products/abstract/warrior5.png',
     category: 'Warrior',
-    stock: 10 // Antal produkter i lager
-  }
+    stock: 10, // Antal produkter i lager
+  },
 ];
-

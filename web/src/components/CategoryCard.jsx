@@ -1,7 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom'
-
+import React from 'react';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   flex: 1;
@@ -14,7 +13,6 @@ const Container = styled.div`
   align-items: center;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
-
 
   &:hover {
     cursor: pointer;
@@ -44,7 +42,6 @@ const Info = styled.div`
   border-radius: 10px;
 `;
 
-
 const Title = styled.h1`
   color: white;
   margin-bottom: 20px;
@@ -69,10 +66,10 @@ const CategoryCard = ({ name, image }) => {
 
   return (
     <Container onClick={handleClick}>
-        <Img src={image} alt={name} />
+      <Img src={image} alt={name} />
       <Info>
-      <Title>{name}</Title>
-      <Button>Click to view</Button>
+        <Title>{name} </Title>
+        <Button>Click to view</Button>
       </Info>
     </Container>
   );
