@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { products } from '../data/products';
+import { products } from '../data/products'; // Importera produktdata
 
 const StockContext = createContext();
 
@@ -8,18 +8,32 @@ export const useStock = () => {
 };
 
 export const StockProvider = ({ children }) => {
-  const [stock, setStock] = useState(products);
+  // Initialisera lagersaldot baserat på produkterna
+  const [stock, setStock] = useState(
+    products.map((product) => ({
+      id: product.id,
+      stock: product.stock, // Hämta lagersaldot från products.js
+    }))
+  );
 
-  const updateStock = (productId, quantity) => {
-    setStock(prevStock => prevStock.map(item =>
-      item.id === productId && item.stock >= quantity  // Lägg till en kontroll här
-      ? { ...item, stock: item.stock - quantity }
-      : item 
-    ));
+  // Funktion för att uppdatera lagersaldot
+  const updateStock = (productId, quantityChange) => {
+    setStock((prevStock) =>
+      prevStock.map((item) =>
+        item.id === productId
+          ? { ...item, stock: Math.max(0, item.stock + quantityChange) } // Säkerställ att lagret inte går under 0
+          : item
+      )
+    );
+  };
+
+  // Funktion för att hämta lagersaldo för en specifik produkt
+  const getStockById = (productId) => {
+    return stock.find((item) => item.id === productId)?.stock || 0;
   };
 
   return (
-    <StockContext.Provider value={{ stock, updateStock }}>
+    <StockContext.Provider value={{ stock, updateStock, getStockById }}>
       {children}
     </StockContext.Provider>
   );

@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useCart } from '../contexts/CartContext';
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import { getImageUrl } from '../utils/imageUtils';
 import { useEffect } from 'react';
-import { useStock } from '../contexts/StockContext';
 import { Link } from 'react-router-dom';
 
 const Info = styled.div`
@@ -71,41 +69,18 @@ const Image = styled.img`
 `;
 
 const ProductCard = ({ product }) => {
-  const { addToCart } = useCart();
-  const [quantity, setQuantity] = useState(1);
   const [imageUrl, setImageUrl] = useState(null);
-  const { updateStock } = useStock();
 
   useEffect(() => {
     const loadImage = async () => {
       const image = await getImageUrl(product.category, product.image);
-      setImageUrl(image); 
+      setImageUrl(image);
     };
 
     loadImage();
-  }, [product]); 
-
-  const handleQuantityChange = React.useCallback((change) => {
-    const newQuantity = quantity + change;
-    if (newQuantity >= 1 && newQuantity <= product.stock) {
-      setQuantity(newQuantity);
-    }
-  }, [quantity, product.stock]);
+  }, [product]);
 
 
-  useEffect(() => {
-    handleQuantityChange(0); 
-  }, [handleQuantityChange]);
-
-  const handleAddToCart = () => {
-    if (quantity <= product.stock) {
-      addToCart(product, quantity);
-      updateStock(product.id, quantity);
-      product.stock -= quantity; 
-    }
-  };
-
- 
 
   return (
     <Container>
@@ -113,7 +88,7 @@ const ProductCard = ({ product }) => {
       <Image src={imageUrl} alt={product.name} />
       <Info>
         <Icon>
-          <ShoppingCartOutlined onClick={handleAddToCart} />
+          <ShoppingCartOutlined />
         </Icon>
         <Icon>
           <Link to={`/product/${product.id}`}>
@@ -124,7 +99,6 @@ const ProductCard = ({ product }) => {
           <FavoriteBorderOutlined />
         </Icon>
       </Info>
-
     </Container>
   );
 };

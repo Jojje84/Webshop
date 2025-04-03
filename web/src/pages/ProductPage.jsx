@@ -3,8 +3,7 @@ import { useParams } from 'react-router-dom';
 import { products } from '../data/products';
 import styled from 'styled-components';
 import { getImageUrl } from '../utils/imageUtils';
-import { useCart } from '../contexts/CartContext';
-import { useStock } from '../contexts/StockContext';
+
 
 const Container = styled.div``;
 
@@ -90,10 +89,9 @@ const Button = styled.button`
 const ProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const [quantity, setQuantity] = useState(1);
   const [imageUrl, setImageUrl] = useState(null);
-  const { addToCart } = useCart();
-  const { updateStock } = useStock();
+  const [quantity, setQuantity] = useState(1);
+
 
   useEffect(() => {
     const foundProduct = products.find((prod) => prod.id === parseInt(id));
@@ -119,16 +117,6 @@ const ProductPage = () => {
     }
   };
 
-  const handleAddToCart = () => {
-    if (quantity <= product.stock) {
-      addToCart(product, quantity);
-      updateStock(product.id, quantity);
-      setProduct((prevProduct) => ({
-        ...prevProduct,
-        stock: prevProduct.stock - quantity,
-      }));
-    }
-  };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -150,7 +138,7 @@ const ProductPage = () => {
               <Amount>{quantity}</Amount>
               <AddIcon onClick={() => handleQuantityChange(1)}>+</AddIcon>
             </AmountContainer>
-            <Button onClick={handleAddToCart}>Add to cart</Button>
+            <Button >Add to cart</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
