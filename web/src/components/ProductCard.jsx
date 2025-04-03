@@ -4,6 +4,8 @@ import { useCart } from '../contexts/CartContext';
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import { getImageUrl } from '../utils/imageUtils';
 import { useEffect } from 'react';
+import { useStock } from '../contexts/StockContext';
+import { Link } from 'react-router-dom';
 
 const Info = styled.div`
   width: 100%;
@@ -71,8 +73,8 @@ const Image = styled.img`
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
-  const [error, setError] = useState('');
   const [imageUrl, setImageUrl] = useState(null);
+  const { updateStock } = useStock();
 
   useEffect(() => {
     const loadImage = async () => {
@@ -83,19 +85,28 @@ const ProductCard = ({ product }) => {
     loadImage();
   }, [product]); 
 
-  const handleAddToCart = () => {
-    if (quantity > 0 && quantity <= product.stock) {
-      addToCart(product, quantity);
-      setError('');
-    } else {
-      setError('Invalid quantity. Please select a valid quantity.');
+  const handleQuantityChange = (change) => {
+    const newQuantity = quantity + change;
+    if (newQuantity >= 1 && newQuantity <= product.stock) {
+      setQuantity(newQuantity);
     }
   };
 
-  const handleQuantityChange = (e) => {
-    const value = Math.max(1, Math.min(e.target.value, product.stock));
-    setQuantity(value);
+  // Example usage of handleQuantityChange
+  // You can replace this with actual UI elements like buttons
+  useEffect(() => {
+    handleQuantityChange(0); // Initialize quantity validation
+  }, []);
+
+  const handleAddToCart = () => {
+    if (quantity <= product.stock) {
+      addToCart(product, quantity);
+      updateStock(product.id, quantity);
+      product.stock -= quantity; // Directly update the product stock
+    }
   };
+
+ 
 
   return (
     <Container>
@@ -106,28 +117,15 @@ const ProductCard = ({ product }) => {
           <ShoppingCartOutlined onClick={handleAddToCart} />
         </Icon>
         <Icon>
-          <SearchOutlined />
+          <Link to={`/product/${product.id}`}>
+            <SearchOutlined />
+          </Link>
         </Icon>
         <Icon>
           <FavoriteBorderOutlined />
         </Icon>
       </Info>
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
-      <p>${product.price}</p>
-      <p>Stock: {product.stock}</p>
-      <input
-        type="number"
-        value={quantity}
-        min="1"
-        max={product.stock}
-        onChange={handleQuantityChange}
-        style={{ margin: '10px', padding: '5px' }}
-      />
-      <button onClick={handleAddToCart}>
-        {product.stock > 0 ? 'Add to Cart' : 'Out of Stock'}
-      </button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+
     </Container>
   );
 };
