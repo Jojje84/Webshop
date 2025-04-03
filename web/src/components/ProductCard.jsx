@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useCart } from '../contexts/CartContext';
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+import { getImageUrl } from '../utils/imageUtils';
+import { useEffect } from 'react';
 
 const Info = styled.div`
   width: 100%;
@@ -70,6 +72,16 @@ const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState('');
+  const [imageUrl, setImageUrl] = useState(null);
+
+  useEffect(() => {
+    const loadImage = async () => {
+      const image = await getImageUrl(product.category, product.image); // Ladda bilden
+      setImageUrl(image); // Uppdatera state med bildens URL
+    };
+
+    loadImage();
+  }, [product]); 
 
   const handleAddToCart = () => {
     if (quantity > 0 && quantity <= product.stock) {
@@ -88,7 +100,7 @@ const ProductCard = ({ product }) => {
   return (
     <Container>
       <Cirkel />
-      <Image src={product.image} alt={product.name} />
+      <Image src={imageUrl} alt={product.name} />
       <Info>
         <Icon>
           <ShoppingCartOutlined onClick={handleAddToCart} />

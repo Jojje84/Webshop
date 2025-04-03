@@ -8,7 +8,6 @@ import natureImg from '../assets/images/categories/nature.png';
 import portraitImg from '../assets/images/categories/portrait.png';
 import retroImg from '../assets/images/categories/retro.png';
 import warriorImg from '../assets/images/categories/warrior.png';
-import demoImg from '../assets/images/categories/demo.png';
 
 export const categories = [
   {
@@ -50,9 +49,5 @@ export const categories = [
   {
     name: 'Warrior',
     image: warriorImg,
-  },
-  {
-    name: 'Demo',
-    image: demoImg,
   },
 ];

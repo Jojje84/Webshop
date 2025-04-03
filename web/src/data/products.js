@@ -1,3 +1,5 @@
+
+
 export const products = [
   {
     id: 1,
@@ -22,7 +24,7 @@ export const products = [
     name: 'Abstract Painting',
     description: '',
     price: 1000,
-    image: '../assets/images/products/abstract/abstract3.png',
+    image: 'abstract3.png',
     category: 'Abstract',
     stock: 10,
   },
@@ -31,7 +33,7 @@ export const products = [
     name: 'Abstract Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/abstract4.png',
+    image: 'abstract4.png',
     category: 'Abstract',
     stock: 10, // Antal produkter i lager
   },
@@ -40,7 +42,7 @@ export const products = [
     name: 'Abstract Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/abstract5.png',
+    image: 'abstract5.png',
     category: 'Abstract',
     stock: 10, // Antal produkter i lager
   },
@@ -49,7 +51,7 @@ export const products = [
     name: 'Animal Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/animal/animal1.png',
+    image: 'animal1.png',
     category: 'Animals',
     stock: 10, // Antal produkter i lager
   },
@@ -58,7 +60,7 @@ export const products = [
     name: 'Animal Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/animal/animal2.png',
+    image: 'animal2.png',
     category: 'Animals',
     stock: 10, // Antal produkter i lager
   },
@@ -67,7 +69,7 @@ export const products = [
     name: 'Animal Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/animal/animal3.png',
+    image: 'animal3.png',
     category: 'Animals',
     stock: 10, // Antal produkter i lager
   },
@@ -76,7 +78,7 @@ export const products = [
     name: 'Animal Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/animal/animal4.png',
+    image: 'animal4.png',
     category: 'Animals',
     stock: 10, // Antal produkter i lager
   },
@@ -85,7 +87,7 @@ export const products = [
     name: 'Animal Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/animal/animal5.png',
+    image: 'animal5.png',
     category: 'Animals',
     stock: 10, // Antal produkter i lager
   },
@@ -94,7 +96,7 @@ export const products = [
     name: 'Anime Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/anime1.png',
+    image: 'anime1.png',
     category: 'Anime',
     stock: 10, // Antal produkter i lager
   },
@@ -103,7 +105,7 @@ export const products = [
     name: 'Anime Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/anime2.png',
+    image: 'nime2.png',
     category: 'Anime',
     stock: 10, // Antal produkter i lager
   },
@@ -112,7 +114,7 @@ export const products = [
     name: 'Anime Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/anime3.png',
+    image: 'anime3.png',
     category: 'Anime',
     stock: 10, // Antal produkter i lager
   },
@@ -121,7 +123,7 @@ export const products = [
     name: 'Anime Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/anime4.png',
+    image: 'anime4.png',
     category: 'Still Life',
     stock: 10, // Antal produkter i lager
   },
@@ -130,7 +132,7 @@ export const products = [
     name: 'Anime Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/anime5.png',
+    image: 'anime5.png',
     category: 'Anime',
     stock: 10, // Antal produkter i lager
   },
@@ -139,7 +141,7 @@ export const products = [
     name: 'Citys Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/citys1.png',
+    image: 'citys1.png',
     category: 'Citys',
     stock: 10, // Antal produkter i lager
   },
@@ -148,7 +150,7 @@ export const products = [
     name: 'Citys Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/citys2.png',
+    image: 'citys2.png',
     category: 'Citys',
     stock: 10, // Antal produkter i lager
   },
@@ -157,7 +159,7 @@ export const products = [
     name: 'Citys Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/citys3.png',
+    image: 'citys3.png',
     category: 'Citys',
     stock: 10, // Antal produkter i lager
   },
@@ -166,7 +168,7 @@ export const products = [
     name: 'Citys Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/citys4.png',
+    image: 'citys4.png',
     category: 'Citys',
     stock: 10, // Antal produkter i lager
   },
@@ -175,7 +177,7 @@ export const products = [
     name: 'Citys Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/citys5.png',
+    image: 'citys5.png',
     category: 'Citys',
     stock: 10, // Antal produkter i lager
   },
