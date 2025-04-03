@@ -78,31 +78,30 @@ const ProductCard = ({ product }) => {
 
   useEffect(() => {
     const loadImage = async () => {
-      const image = await getImageUrl(product.category, product.image); // Ladda bilden
-      setImageUrl(image); // Uppdatera state med bildens URL
+      const image = await getImageUrl(product.category, product.image);
+      setImageUrl(image); 
     };
 
     loadImage();
   }, [product]); 
 
-  const handleQuantityChange = (change) => {
+  const handleQuantityChange = React.useCallback((change) => {
     const newQuantity = quantity + change;
     if (newQuantity >= 1 && newQuantity <= product.stock) {
       setQuantity(newQuantity);
     }
-  };
+  }, [quantity, product.stock]);
 
-  // Example usage of handleQuantityChange
-  // You can replace this with actual UI elements like buttons
+
   useEffect(() => {
-    handleQuantityChange(0); // Initialize quantity validation
-  }, []);
+    handleQuantityChange(0); 
+  }, [handleQuantityChange]);
 
   const handleAddToCart = () => {
     if (quantity <= product.stock) {
       addToCart(product, quantity);
       updateStock(product.id, quantity);
-      product.stock -= quantity; // Directly update the product stock
+      product.stock -= quantity; 
     }
   };
 
