@@ -276,7 +276,7 @@ export const products = [
     name: 'Nature Painting',
     description: '',
     price: 1000,
-    image: '/assets/images/products/abstract/nature1.png',
+    image: 'natur1.png',
     category: 'Nature',
     stock: 10, // Antal produkter i lager
   },
