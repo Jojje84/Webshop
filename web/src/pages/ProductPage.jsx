@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { products } from '../data/products';
 import styled from 'styled-components';
 import { getImageUrl } from '../utils/imageUtils';
+import { useCart } from '../contexts/CartContext';
+import { useStock } from '../contexts/StockContext'
 
 
 const Container = styled.div``;
@@ -91,6 +93,8 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+  const { getStockById, updateStock } = useStock();
 
 
   useEffect(() => {
@@ -112,8 +116,20 @@ const ProductPage = () => {
 
   const handleQuantityChange = (change) => {
     const newQuantity = quantity + change;
-    if (newQuantity >= 1 && newQuantity <= product.stock) {
+    const stockAvailable = getStockById(product.id);
+    if (newQuantity >= 1 && newQuantity <= stockAvailable) {
       setQuantity(newQuantity);
+    }
+  };
+
+  const handleAddToCart = () => {
+    if (product) {
+      if (quantity <= getStockById(product.id)) {
+        addToCart(product, quantity);
+        updateStock(product.id, -quantity);
+      } else {
+        alert('Inte tillräckligt med lager!');
+      }
     }
   };
 
@@ -130,7 +146,7 @@ const ProductPage = () => {
           <Title>{product.name}</Title>
           <Desc>{product.description}</Desc>
           <Price>${product.price}</Price>
-          <p>Stock: {product.stock}</p>
+          <p>Stock:{getStockById(product.id)}</p>
 
           <AddContainer>
             <AmountContainer>
@@ -138,7 +154,7 @@ const ProductPage = () => {
               <Amount>{quantity}</Amount>
               <AddIcon onClick={() => handleQuantityChange(1)}>+</AddIcon>
             </AmountContainer>
-            <Button >Add to cart</Button>
+            <Button onClick={handleAddToCart}>Add to cart</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
