@@ -4,6 +4,8 @@ import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@m
 import { getImageUrl } from '../utils/imageUtils';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../contexts/CartContext';
+import { useStock } from '../contexts/StockContext';
 
 const Info = styled.div`
   width: 100%;
@@ -70,6 +72,8 @@ const Image = styled.img`
 
 const ProductCard = ({ product }) => {
   const [imageUrl, setImageUrl] = useState(null);
+  const { addToCart } = useCart(); 
+  const { getStockById } = useStock(); 
 
   useEffect(() => {
     const loadImage = async () => {
@@ -80,14 +84,21 @@ const ProductCard = ({ product }) => {
     loadImage();
   }, [product]);
 
-
+  const handleAddToCart = () => {
+    const currentStock = getStockById(product.id); // Få lagersaldo för produkten
+    if (currentStock > 0) {
+      addToCart(product, 1); // Lägg till 1 produkt i varukorgen
+    } else {
+      alert('Produkt är slut i lager!');
+    }
+  };
 
   return (
     <Container>
       <Cirkel />
       <Image src={imageUrl} alt={product.name} />
       <Info>
-        <Icon>
+        <Icon onClick={handleAddToCart}>
           <ShoppingCartOutlined />
         </Icon>
         <Icon>
