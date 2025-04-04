@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { useCart } from '../contexts/CartContext';
-import { Link } from 'react-router-dom';
-import { Search, ShoppingCartOutlined } from '@mui/icons-material';
-import Badge from '@mui/material/Badge';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { useCart } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
+import { Search, ShoppingCartOutlined } from "@mui/icons-material";
+import Badge from "@mui/material/Badge";
 
 const NavbarContainer = styled.nav`
   height: 60px;
@@ -24,20 +24,11 @@ const Left = styled.div`
   align-items: center;
   justify-content: flex-start;
   height: 100%;
-  padding-left: 30px;
-  background-color: #b0b3b8;
-`;
-
-const Center = styled.div`
-  flex-basis: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  padding: 0px 30px 0 30px;
   background-color: #b0b3b8;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  padding-right: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 `;
 
 const SearchContainer = styled.div`
@@ -72,6 +63,7 @@ const Right = styled.div`
   border-bottom-left-radius: 15px;
   padding-right: 10px;
   justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 `;
 
 const Cart = styled.div`
@@ -89,7 +81,7 @@ const Dropdown = styled.div`
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px;
-  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  display: ${(props) => (props.isOpen ? "block" : "none")};
 `;
 
 const DropdownItem = styled.div`
@@ -105,7 +97,7 @@ const Title = styled.h3`
   color: #333;
 `;
 const Button = styled.button`
-  background-color:rgb(70, 111, 183);
+  background-color: rgb(70, 111, 183);
   color: white;
   border: none;
   border-radius: 5px;
@@ -114,7 +106,33 @@ const Button = styled.button`
   font-size: 14px;
 
   &:hover {
-    background-color:rgb(63, 194, 102);
+    background-color: rgb(63, 194, 102);
+  }
+`;
+
+const ButtonLink = styled(Link)`
+  background-color: rgb(11, 11, 11);
+  color: white;
+  padding: 12px 20px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -135,53 +153,38 @@ const Navbar = () => {
     <NavbarContainer>
       <Wrapper>
         <Left>
-          <Link to="/" style={{ color: 'white', marginRight: '20px' }}>
-            HOME
-          </Link>
-          <Link
-            to="/categories"
-            style={{ color: 'white', marginRight: '20px' }}>
-            CATEGORIES
-          </Link>
-          <Link to="/contact" style={{ color: 'white' }}>
-            CONTACT
-          </Link>
-        </Left>
-        <Center>
+          <ButtonLink to="/">HOME</ButtonLink>
+          <ButtonLink to="/categories">CATEGORIES</ButtonLink>
+          <ButtonLink to="/contact">CONTACT</ButtonLink>
           <SearchContainer>
             <Input placeholder="Search" />
-            <Search style={{ color: 'gray', fontSize: 20 }} />
+            <Search style={{ color: "gray", fontSize: 20 }} />
           </SearchContainer>
-        </Center>
+        </Left>
         <CenterSpace />
         <Right>
-          <Link to="/login" style={{ color: 'white', marginRight: '20px' }}>
-            LOG IN
-          </Link>
-          <Cart
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-            >
-            <div>
-          <Badge badgeContent={totalItems} color="primary">
-            <ShoppingCartOutlined />
+          <ButtonLink to="/login">LOG IN</ButtonLink>
+          <Cart onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <Link to="/cart" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Badge badgeContent={totalItems} color="primary">
+                <ShoppingCartOutlined />
               </Badge>
-              </div>
-         
-          <Dropdown isOpen={isDropdownOpen}>
+            </Link>
+
+            <Dropdown isOpen={isDropdownOpen}>
               {cart.length === 0 ? (
                 <DropdownItem>Your cart is empty.</DropdownItem>
               ) : (
                 <>
                   <Title>Products</Title>
                   {cart.map((product) => (
-                  <DropdownItem key={product.id}>
-                    {product.name} x {product.quantity}
-                  </DropdownItem>
-                   ))}
-                   </>
-                  )}
-               <Link to="/cart">
+                    <DropdownItem key={product.id}>
+                      {product.name} x {product.quantity}
+                    </DropdownItem>
+                  ))}
+                </>
+              )}
+              <Link to="/cart">
                 <DropdownItem>
                   <Button>Go to cart</Button>
                 </DropdownItem>

@@ -7,6 +7,7 @@ import Cart from './pages/Cart';
 import Navbar from './components/Navbar';
 import ProductList from './pages/ProductList';
 import ProductPage from './pages/ProductPage';
+import CategorySection from './components/CategorySection';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/categories" element={<CategorySection />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/products/:category" element={<ProductList />} />
             <Route path="/product/:id" element={<ProductPage />} />
