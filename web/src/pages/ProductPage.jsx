@@ -7,7 +7,8 @@ import { useCart } from '../contexts/CartContext';
 import { useStock } from '../contexts/StockContext'
 
 
-const Container = styled.div``;
+const Container = styled.div`
+`;
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -40,9 +41,19 @@ const Price = styled.span`
   font-size: 40px;
 `;
 
+const StockAmount = styled.div`
+  font-weight: 100;
+  font-size: 20px;
+  color: gray;
+  font-weight: 400;
+  margin: 20px 0px;
+`;
+
+ 
+
 const AddContainer = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
   width: 50%;
 `;
@@ -50,7 +61,9 @@ const AmountContainer = styled.div`
   display: flex;
   align-items: center;
   font-weight: 700;
+  justify-content: center;
 `;
+
 const RemoveIcon = styled.div`
   cursor: pointer;
   font-size: 24px;
@@ -70,6 +83,7 @@ const AddIcon = styled.div`
   margin-left: 10px;
   user-select: none;
 `;
+
 const Amount = styled.span`
   font-size: 24px;
   margin: 0 10px;
@@ -83,7 +97,7 @@ const Button = styled.button`
   border-radius: 5px;
   font-size: 16px;
   font-weight: 600;
-  margin-left: 20px;
+  margin: 20px 0 0 0;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.5s ease;
@@ -156,7 +170,7 @@ const ProductPage = () => {
           <Title>{product.name}</Title>
           <Desc>{product.description}</Desc>
           <Price>${product.price}</Price>
-          <p>Stock:{getStockById(product.id)}</p>
+          <StockAmount>Stock:{getStockById(product.id)}</StockAmount>
 
           <AddContainer>
             <AmountContainer>

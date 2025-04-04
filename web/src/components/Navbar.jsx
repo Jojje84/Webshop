@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useCart } from '../contexts/CartContext';
 import { Link } from 'react-router-dom';
@@ -76,16 +76,47 @@ const Right = styled.div`
 
 const Cart = styled.div`
   margin-left: 20px;
+  position: relative;
+`;
+
+const Dropdown = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+`;
+
+const DropdownItem = styled.div`
+  padding: 5px;
+  cursor: pointer;
+`;
+
+const Title = styled.h3`
+  margin: 0;
+  padding: 0 0 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
 `;
 
 const Navbar = () => {
   const { cart } = useCart();
+  const totalItems = cart.reduce((total, product) => total + product.quantity, 0);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Beräkna totalt antal produkter i varukorgen
-  const totalItems = cart.reduce(
-    (total, product) => total + product.quantity,
-    0,
-  );
+  const handleMouseEnter = () => {
+    setIsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDropdownOpen(false);
+  };
 
   return (
     <NavbarContainer>
@@ -114,16 +145,33 @@ const Navbar = () => {
           <Link to="/login" style={{ color: 'white', marginRight: '20px' }}>
             LOG IN
           </Link>
-          <Cart>
-            <Link
-              to="/cart"
-              style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
-              <Badge badgeContent={totalItems} color="primary">
-                {' '}
-                {/* Ändrad här */}
-                <ShoppingCartOutlined style={{ marginLeft: '5px' }} />
+          <Cart
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+            >
+            <div>
+          <Badge badgeContent={totalItems} color="primary">
+            <ShoppingCartOutlined />
               </Badge>
-            </Link>
+              </div>
+         
+          <Dropdown isOpen={isDropdownOpen}>
+              {cart.length === 0 ? (
+                <DropdownItem>Your cart is empty.</DropdownItem>
+              ) : (
+                cart.map((product) => (
+                  <DropdownItem key={product.id}>
+                    <Title>Your Products</Title>
+                    {product.name} x {product.quantity}
+                  </DropdownItem>
+                   ))
+                  )}
+               <Link to="/cart">
+                <DropdownItem>
+                  Go to cart →
+                </DropdownItem>
+              </Link>
+            </Dropdown>
           </Cart>
         </Right>
       </Wrapper>
