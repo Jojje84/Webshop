@@ -77,14 +77,23 @@ const Amount = styled.span`
 
 const Button = styled.button`
   padding: 15px;
-  border: 2px solid 
-  background-color: green;
+  border: 2px solid ${(props) => (props.isOutOfStock ? 'darkred' : 'green')};
+  background-color: ${(props) => (props.isOutOfStock ? 'red' : 'green')};
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 20px;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.5s ease;
 
   &:hover {
-    background-color: ${(props) => (props.isOutOfStock ? 'darkred' : 'green')};
+    background-color: ${(props) => (props.isOutOfStock ? 'darkred' : 'darkgreen')};
+  }
+    &:disabled {
+    background-color: gray;
+    cursor: not-allowed;
   }
 `;
 
@@ -137,6 +146,7 @@ const ProductPage = () => {
   if (!product) {
     return <div>Loading...</div>;
   }
+  const isOutOfStock = getStockById(product.id) === 0;
 
   return (
     <Container>
@@ -154,7 +164,13 @@ const ProductPage = () => {
               <Amount>{quantity}</Amount>
               <AddIcon onClick={() => handleQuantityChange(1)}>+</AddIcon>
             </AmountContainer>
-            <Button onClick={handleAddToCart}>Add to cart</Button>
+            <Button 
+            onClick={handleAddToCart}  
+            disabled={isOutOfStock} 
+            outOfStock={isOutOfStock}
+            >
+               {isOutOfStock ? 'Out of Stock' : 'Add to Cart'}
+              </Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
