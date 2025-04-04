@@ -93,16 +93,29 @@ const Dropdown = styled.div`
 `;
 
 const DropdownItem = styled.div`
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
 `;
 
 const Title = styled.h3`
   margin: 0;
-  padding: 0 0 5px 0;
+  padding: 0 0 10px 0;
   font-size: 16px;
   font-weight: bold;
   color: #333;
+`;
+const Button = styled.button`
+  background-color:rgb(70, 111, 183);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    background-color:rgb(63, 194, 102);
+  }
 `;
 
 const Navbar = () => {
@@ -159,16 +172,18 @@ const Navbar = () => {
               {cart.length === 0 ? (
                 <DropdownItem>Your cart is empty.</DropdownItem>
               ) : (
-                cart.map((product) => (
+                <>
+                  <Title>Products</Title>
+                  {cart.map((product) => (
                   <DropdownItem key={product.id}>
-                    <Title>Your Products</Title>
                     {product.name} x {product.quantity}
                   </DropdownItem>
-                   ))
+                   ))}
+                   </>
                   )}
                <Link to="/cart">
                 <DropdownItem>
-                  Go to cart →
+                  <Button>Go to cart</Button>
                 </DropdownItem>
               </Link>
             </Dropdown>
