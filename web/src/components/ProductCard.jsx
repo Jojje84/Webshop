@@ -85,9 +85,9 @@ const ProductCard = ({ product }) => {
   }, [product]);
 
   const handleAddToCart = () => {
-    const currentStock = getStockById(product.id); // Få lagersaldo för produkten
+    const currentStock = getStockById(product.id); 
     if (currentStock > 0) {
-      addToCart(product, 1); // Lägg till 1 produkt i varukorgen
+      addToCart(product, 1); 
     } else {
       alert('Produkt är slut i lager!');
     }

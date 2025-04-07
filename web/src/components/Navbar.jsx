@@ -54,7 +54,7 @@ const CenterSpace = styled.div`
 `;
 
 const Right = styled.div`
-  flex-basis: 25%;
+  flex-basis: 20%;
   display: flex;
   align-items: center;
   height: 100%;
