@@ -45,14 +45,12 @@ const Info = styled.div`
 const Title = styled.h1`
   color: white;
   margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center; 
 `;
 
-const Button = styled.button`
+const Text = styled.button`
   border: none;
-  padding: 10px;
-  background-color: white;
-  color: gray;
-  cursor: pointer;
   font-weight: 600;
   border-radius: 5px;
 `;
@@ -69,7 +67,7 @@ const CategoryCard = ({ name, image }) => {
       <Img src={image} alt={name} />
       <Info>
         <Title>{name} </Title>
-        <Button>Click to view</Button>
+        <Text>Click to view</Text>
       </Info>
     </Container>
   );
