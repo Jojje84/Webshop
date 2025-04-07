@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Container = styled.div`
   flex: 1;
   margin: 5px;
-  max-width: 300px;
+  max-width: 500px;
   height: 300px;
   position: relative;
   display: flex;
@@ -49,10 +49,15 @@ const Title = styled.h1`
   text-align: center; 
 `;
 
-const Text = styled.button`
+const Text = styled.div`
   border: none;
+  padding: 1px;
+  color: white;
+  cursor: pointer;
   font-weight: 600;
   border-radius: 5px;
+  text-align: center;
+
 `;
 
 const CategoryCard = ({ name, image }) => {
