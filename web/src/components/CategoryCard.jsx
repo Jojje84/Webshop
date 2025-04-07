@@ -5,20 +5,12 @@ import { useNavigate } from 'react-router-dom';
 const Container = styled.div`
   flex: 1;
   margin: 5px;
-  max-width: 500px;
+  max-width: 300px;
   height: 300px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-  }
 `;
 
 const Img = styled.img`
@@ -45,20 +37,9 @@ const Info = styled.div`
 const Title = styled.h1`
   color: white;
   margin-bottom: 20px;
-  font-size: 24px;
-  text-align: center; 
 `;
 
-const Text = styled.div`
-  border: none;
-  padding: 1px;
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-  border-radius: 5px;
-  text-align: center;
 
-`;
 
 const CategoryCard = ({ name, image }) => {
   const navigate = useNavigate();
@@ -72,7 +53,7 @@ const CategoryCard = ({ name, image }) => {
       <Img src={image} alt={name} />
       <Info>
         <Title>{name} </Title>
-        <Text>Click to view</Text>
+  
       </Info>
     </Container>
   );
