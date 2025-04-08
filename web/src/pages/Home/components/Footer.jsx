@@ -77,7 +77,7 @@ const Footer = () => {
           <ButtonLink to="/">Home</ButtonLink>
             <ButtonLink to="/cart">Cart</ButtonLink>
             <ButtonLink to="/categories">Categories</ButtonLink>
-            <ButtonLink to="/question" >Question</ButtonLink>
+            <ButtonLink to="/Question" >Question</ButtonLink>
             <ButtonLink to="/GDPR">GDPR</ButtonLink>
           </List>
         </Left>

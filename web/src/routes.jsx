@@ -7,6 +7,8 @@ import ProductList from "./pages/Categories/ProductList";
 import ProductPage from "./pages/Products/ProductPage";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
+import Question from "./pages/Question";
+import GDPR from "./pages/Gdpr";
 
 const AppRoutes = () => (
   <Routes>
@@ -17,6 +19,8 @@ const AppRoutes = () => (
     <Route path="/product/:id" element={<ProductPage />} />
     <Route path="/contact" element={<Contact />} />
     <Route path="/login" element={<Login />} />
+    <Route path="/question" element={<Question />} />
+    <Route path="/gdpr" element={<GDPR />} />
   </Routes>
 );
 
