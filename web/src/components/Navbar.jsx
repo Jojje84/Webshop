@@ -165,13 +165,13 @@ const Navbar = () => {
         <Right>
           <ButtonLink to="/login">LOG IN</ButtonLink>
           <Cart onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <Link to="/cart" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
               <Badge badgeContent={totalItems} color="primary">
                 <ShoppingCartOutlined />
               </Badge>
             </Link>
 
-            <Dropdown isOpen={isDropdownOpen}>
+            <Dropdown $isOpen={isDropdownOpen}>
               {cart.length === 0 ? (
                 <DropdownItem>Your cart is empty.</DropdownItem>
               ) : (
