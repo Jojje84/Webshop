@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Room, MailOutline } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100%;
@@ -35,9 +36,10 @@ const List = styled.ul`
   flex-wrap: wrap;
 `;
 
-const ListItem = styled.li`
+const ButtonLink = styled(Link)`
   width: 50%;
   margin-bottom: 10px;
+  color: white;
 `;
 
 const Right = styled.div`
@@ -72,11 +74,11 @@ const Footer = () => {
         <Left>
           <Title>LINKS</Title>
           <List>
-            <ListItem>Home</ListItem>
-            <ListItem>Cart</ListItem>
-            <ListItem>Categories</ListItem>
-            <ListItem>Question</ListItem>
-            <ListItem>GDPR</ListItem>
+          <ButtonLink to="/">Home</ButtonLink>
+            <ButtonLink to="/cart">Cart</ButtonLink>
+            <ButtonLink to="/categories">Categories</ButtonLink>
+            <ButtonLink to="/question" >Question</ButtonLink>
+            <ButtonLink to="/GDPR">GDPR</ButtonLink>
           </List>
         </Left>
         <Right>
