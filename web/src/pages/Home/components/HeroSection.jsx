@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
 import styled from "styled-components";
 import { sliderItems } from "../../../data/sliderItems";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -55,11 +56,12 @@ const ImgContainer = styled.div`
 `;
 
 const Img = styled.img`
-  max-height: 100%;
-  width: auto;
-  object-fit: contain;
+  width: 500px;
+  height: auto;
+  object-fit: cover;
   display: block;
-  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
 `;
 
 const InfoContainer = styled.div`
@@ -68,7 +70,12 @@ const InfoContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 70px;
+  font-size: 50px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 `;
 
 const Desc = styled.p`
@@ -76,12 +83,60 @@ const Desc = styled.p`
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
+  color: #333;
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  text-transform: capitalize;
+  font-style: italic;
 `;
-const Button = styled.button`
-  padding: 10px;
+const ButtonLink = styled(Link)`
+ width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 20px;
-  background-color: transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    color: #333;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
 `;
 
 const HeroSection = ({ onOpenCategories }) => {
@@ -116,7 +171,7 @@ const HeroSection = ({ onOpenCategories }) => {
             <InfoContainer>
               <Title>{item.title} </Title>
               <Desc>{item.desc}</Desc>
-              <Button onClick={onOpenCategories}>Look</Button>
+              <ButtonLink to="/categories">Look</ButtonLink>
             </InfoContainer>
           </Slide>
         ))}
