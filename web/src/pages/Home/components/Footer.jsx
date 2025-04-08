@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Room, MailOutline } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { Room, MailOutline } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -74,20 +74,23 @@ const Footer = () => {
         <Left>
           <Title>LINKS</Title>
           <List>
-          <ButtonLink to="/">Home</ButtonLink>
+            <ButtonLink to="/">Home</ButtonLink>
             <ButtonLink to="/cart">Cart</ButtonLink>
             <ButtonLink to="/categories">Categories</ButtonLink>
-            <ButtonLink to="/Question" >Question</ButtonLink>
+            <ButtonLink to="/Question">Question</ButtonLink>
             <ButtonLink to="/GDPR">GDPR</ButtonLink>
           </List>
         </Left>
         <Right>
           <Title>CONTACT</Title>
           <ContactItem>
-            <Room style={{ marginRight: '10px' }} /> Street, Box , City
+            <Room style={{ marginRight: "10px" }} /> Street, Box , City
           </ContactItem>
           <ContactItem>
-            <MailOutline style={{ marginRight: '10px' }} /> mail@mail.com
+            <MailOutline style={{ marginRight: "10px" }} />{" "}
+            <a href="mailto:mail@mail.com" style={{ color: "white", textDecoration: "none" }}>
+              mail@mail.com
+            </a>
           </ContactItem>
         </Right>
       </Section>
