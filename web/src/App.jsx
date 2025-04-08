@@ -1,13 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { CartProvider } from './contexts/CartContext';
-import { StockProvider } from './contexts/StockContext';
-import Home from './pages/Home';
-import Cart from './pages/Cart';
-import Navbar from './components/Navbar';
-import ProductList from './pages/ProductList';
-import ProductPage from './pages/ProductPage';
-import CategorySection from './components/CategorySection';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { CartProvider } from "./contexts/CartContext";
+import { StockProvider } from "./contexts/StockContext";
+import Home from "./pages/Home/Home";
+import Cart from "./pages/Cart";
+import Navbar from "./components/Navbar";
+import ProductList from "./pages/Categories/ProductList";
+import ProductPage from "./pages/Products/ProductPage";
+import CategorySection from "./pages/Categories/components/CategorySection";
 
 const App = () => {
   return (

@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { products } from '../data/products';
-import styled from 'styled-components';
-import { getImageUrl } from '../utils/imageUtils';
-import { useCart } from '../contexts/CartContext';
-import { useStock } from '../contexts/StockContext'
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { products } from "../../data/products";
+import styled from "styled-components";
+import { getImageUrl } from "../../utils/imageUtils";
+import { useCart } from "../../contexts/CartContext";
+import { useStock } from "../../contexts/StockContext";
 
-
-const Container = styled.div`
-`;
+const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -48,8 +46,6 @@ const StockAmount = styled.div`
   font-weight: 400;
   margin: 20px 0px;
 `;
-
- 
 
 const AddContainer = styled.div`
   display: flex;
@@ -91,8 +87,8 @@ const Amount = styled.span`
 
 const Button = styled.button`
   padding: 15px;
-  border: 2px solid ${(props) => (props.isOutOfStock ? 'darkred' : 'green')};
-  background-color: ${(props) => (props.isOutOfStock ? 'red' : 'green')};
+  border: 2px solid ${(props) => (props.isOutOfStock ? "darkred" : "green")};
+  background-color: ${(props) => (props.isOutOfStock ? "red" : "green")};
   color: white;
   border-radius: 5px;
   font-size: 16px;
@@ -103,9 +99,9 @@ const Button = styled.button`
   transition: all 0.5s ease;
 
   &:hover {
-    background-color: ${(props) => (props.isOutOfStock ? 'darkred' : 'darkgreen')};
+    background-color: ${(props) => (props.isOutOfStock ? "darkred" : "darkgreen")};
   }
-    &:disabled {
+  &:disabled {
     background-color: gray;
     cursor: not-allowed;
   }
@@ -119,7 +115,6 @@ const ProductPage = () => {
   const { addToCart } = useCart();
   const { getStockById, updateStock } = useStock();
 
-
   useEffect(() => {
     const foundProduct = products.find((prod) => prod.id === parseInt(id));
     setProduct(foundProduct);
@@ -130,7 +125,7 @@ const ProductPage = () => {
           const image = await getImageUrl(foundProduct.category, foundProduct.image);
           setImageUrl(image);
         } catch (err) {
-          console.error('Error loading image:', err);
+          console.error("Error loading image:", err);
         }
       };
       loadImage();
@@ -151,11 +146,10 @@ const ProductPage = () => {
         addToCart(product, quantity);
         updateStock(product.id, -quantity);
       } else {
-        alert('Inte tillräckligt med lager!');
+        alert("Inte tillräckligt med lager!");
       }
     }
   };
-
 
   if (!product) {
     return <div>Loading...</div>;
@@ -178,13 +172,9 @@ const ProductPage = () => {
               <Amount>{quantity}</Amount>
               <AddIcon onClick={() => handleQuantityChange(1)}>+</AddIcon>
             </AmountContainer>
-            <Button 
-            onClick={handleAddToCart}  
-            disabled={isOutOfStock} 
-            outOfStock={isOutOfStock}
-            >
-               {isOutOfStock ? 'Out of Stock' : 'Add to Cart'}
-              </Button>
+            <Button onClick={handleAddToCart} disabled={isOutOfStock} outOfStock={isOutOfStock}>
+              {isOutOfStock ? "Out of Stock" : "Add to Cart"}
+            </Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

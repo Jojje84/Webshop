@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
-import styled from 'styled-components';
-import { sliderItems } from '../data/sliderItems';
+import React, { useState, useEffect } from "react";
+import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
+import styled from "styled-components";
+import { sliderItems } from "../../../data/sliderItems";
 
 const Container = styled.div`
   width: 100%;
@@ -22,8 +22,8 @@ const Arrow = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: ${(props) => props.direction === 'left' && '10px'};
-  right: ${(props) => props.direction === 'right' && '10px'};
+  left: ${(props) => props.direction === "left" && "10px"};
+  right: ${(props) => props.direction === "right" && "10px"};
   margin: auto;
   cursor: pointer;
   opacity: 0.5;
@@ -88,7 +88,7 @@ const HeroSection = ({ onOpenCategories }) => {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const handleClick = (direction) => {
-    if (direction === 'left') {
+    if (direction === "left") {
       setSlideIndex((prev) => (prev > 0 ? prev - 1 : sliderItems.length - 1));
     } else {
       setSlideIndex((prev) => (prev < sliderItems.length - 1 ? prev + 1 : 0));
@@ -104,7 +104,7 @@ const HeroSection = ({ onOpenCategories }) => {
 
   return (
     <Container>
-      <Arrow direction="left" onClick={() => handleClick('left')}>
+      <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlined />
       </Arrow>
       <Wrapper $slideIndex={slideIndex}>
@@ -121,7 +121,7 @@ const HeroSection = ({ onOpenCategories }) => {
           </Slide>
         ))}
       </Wrapper>
-      <Arrow direction="right" onClick={() => handleClick('right')}>
+      <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowRightOutlined />
       </Arrow>
     </Container>

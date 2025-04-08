@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
-import { getImageUrl } from '../utils/imageUtils';
+import { getImageUrl } from '../../../utils/imageUtils';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useCart } from '../contexts/CartContext';
-import { useStock } from '../contexts/StockContext';
+import { useCart } from '../../../contexts/CartContext';
+import { useStock } from '../../../contexts/StockContext';
 
 const Info = styled.div`
   width: 100%;

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import styled from 'styled-components';
-import CategoryCard from './CategoryCard';
-import { categories } from '../data/categories';
-import { useNavigate } from 'react-router-dom';
+import styled from "styled-components";
+import CategoryCard from "./CategoryCard";
+import { categories } from "../../../data/categories";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   padding: 20px;
@@ -11,7 +11,6 @@ const Container = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
- 
 `;
 
 const Title = styled.h1`
@@ -32,11 +31,11 @@ const CategoryWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  text-align: center;   
+  text-align: center;
   gap: 5px;
   overflow-x: auto;
   height: auto;
-  width: 60%;;
+  width: 60%;
   box-sizing: border-box;
   padding: 10px;
 `;
@@ -53,7 +52,6 @@ const CategoryCardStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
 
   &:hover {
     flex: 1.5;
