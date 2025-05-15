@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { useCart } from "../contexts/CartContext";
-import { Link } from "react-router-dom";
-import { Search, ShoppingCartOutlined } from "@mui/icons-material";
-import Badge from "@mui/material/Badge";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useCart } from '../../contexts/CartContext';
+import { Link } from 'react-router-dom';
+import { Search, ShoppingCartOutlined } from '@mui/icons-material';
+import Badge from '@mui/material/Badge';
 
 const NavbarContainer = styled.nav`
   height: 60px;
@@ -81,7 +81,7 @@ const Dropdown = styled.div`
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px;
-  display: ${(props) => (props.isOpen ? "block" : "none")};
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
 `;
 
 const DropdownItem = styled.div`
@@ -158,20 +158,20 @@ const Navbar = () => {
           <ButtonLink to="/contact">CONTACT</ButtonLink>
           <SearchContainer>
             <Input placeholder="Search" />
-            <Search style={{ color: "gray", fontSize: 20 }} />
+            <Search style={{ color: 'gray', fontSize: 20 }} />
           </SearchContainer>
         </Left>
         <CenterSpace />
         <Right>
           <ButtonLink to="/login">LOG IN</ButtonLink>
           <Cart onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/cart" style={{ textDecoration: 'none', color: 'inherit' }}>
               <Badge badgeContent={totalItems} color="primary">
                 <ShoppingCartOutlined />
               </Badge>
             </Link>
 
-            <Dropdown $isOpen={isDropdownOpen}>
+            <Dropdown isOpen={isDropdownOpen}>
               {cart.length === 0 ? (
                 <DropdownItem>Your cart is empty.</DropdownItem>
               ) : (

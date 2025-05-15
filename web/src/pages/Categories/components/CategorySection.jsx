@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import styled from "styled-components";
-import CategoryCard from "./CategoryCard";
-import { categories } from "../../../data/categories";
-import { useNavigate } from "react-router-dom";
+import styled from 'styled-components';
+import CategoryCard from './CategoryCard';
+import { categories } from '../../../data/categories';
+import { useNavigate } from 'react-router-dom';
+import Newsletter from '../../components/Newsletter'; // Justera sökvägen om det behövs
 
 const Container = styled.div`
   padding: 20px;
@@ -26,6 +27,20 @@ const Title = styled.h1`
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 `;
 
+const InfoText = styled.p`
+  font-size: 20px;
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 0;
+  letter-spacing: 1px;
+  text-align: center;
+  background: #f0f6ff;
+  padding: 8px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+`;
+
 const CategoryWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -35,13 +50,15 @@ const CategoryWrapper = styled.div`
   gap: 5px;
   overflow-x: auto;
   height: auto;
-  width: 60%;
+  width: 100%; // Ändra här!
   box-sizing: border-box;
   padding: 10px;
 `;
 
 const CategoryCardStyled = styled.div`
   flex: 1;
+  min-width: 90px; // Ändra här!
+  max-width: 110px; // Ändra här!
   height: 300px;
   transition: flex 0.3s ease, transform 0.3s ease;
   cursor: pointer;
@@ -85,31 +102,7 @@ const CategoriText = styled.div`
   }
 `;
 
-const AccordionContent = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  display: none;
-  z-index: 2;
-  top: 60%;
-  bottom: 40%;
 
- ${CategoryCardStyled}:hover & {
-    display: block;
-`;
-
-const Button = styled.button`
-  border: none;
-  padding: 10px;
-  color: gray;
-  cursor: pointer;
-  font-weight: 600;
-  border-radius: 5px;
-`;
 
 const CategorySection = () => {
   const navigate = useNavigate();
@@ -121,14 +114,16 @@ const CategorySection = () => {
   return (
     <Container>
       <Title>Categories</Title>
+      <InfoText>Click on a category to view products</InfoText>
       <CategoryWrapper>
         {categories.map((category) => (
-          <CategoryCardStyled key={category.name}>
+          <CategoryCardStyled
+            key={category.name}
+            onClick={() => handleNavigate(category.name)}
+            tabIndex={0}
+            style={{ cursor: 'pointer' }}>
             <CategoryCard image={category.image} />
             <CategoriText>{category.name}</CategoriText>
-            <AccordionContent>
-              <Button onClick={() => handleNavigate(category.name)}>Click to view</Button>
-            </AccordionContent>
           </CategoryCardStyled>
         ))}
       </CategoryWrapper>

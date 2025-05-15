@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
-import { getImageUrl } from '../../../utils/imageUtils';
-import { useEffect } from 'react';
+import { imageMap } from '../../../utils/imageMap';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../../contexts/CartContext';
 import { useStock } from '../../../contexts/StockContext';
@@ -71,23 +70,20 @@ const Image = styled.img`
 `;
 
 const ProductCard = ({ product }) => {
-  const [imageUrl, setImageUrl] = useState(null);
-  const { addToCart } = useCart(); 
-  const { getStockById } = useStock(); 
+  const { addToCart } = useCart();
+  const { getStockById } = useStock();
 
-  useEffect(() => {
-    const loadImage = async () => {
-      const image = await getImageUrl(product.category, product.image);
-      setImageUrl(image);
-    };
+  // Hämta bild direkt från mappningen
+  const categoryKey = product.category.toLowerCase();
+  const imageKey = product.image.endsWith('.png') ? product.image : `${product.image}.png`;
 
-    loadImage();
-  }, [product]);
+  const imageUrl =
+    imageMap[categoryKey]?.[imageKey] || 'https://via.placeholder.com/300x300?text=No+Image';
 
   const handleAddToCart = () => {
-    const currentStock = getStockById(product.id); 
+    const currentStock = getStockById(product.id);
     if (currentStock > 0) {
-      addToCart(product, 1); 
+      addToCart(product, 1);
     } else {
       alert('Produkt är slut i lager!');
     }

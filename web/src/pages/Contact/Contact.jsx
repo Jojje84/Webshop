@@ -1,15 +1,24 @@
-import React from "react";
-import styled from "styled-components";
-import Newsletter from "../components/Newsletter";
+import React from 'react';
+import styled from 'styled-components';
+import Newsletter from '../components/Newsletter';
+import Footer from '../components/Footer/Footer';
 
 const Container = styled.div`
-  padding: 20px;
   font-family: Arial, sans-serif;
 `;
 
 const Title = styled.h1`
+  font-weight: 400;
   text-align: center;
+  margin-top: 55px;
+  margin-bottom: 0;
+  font-size: 34px;
   color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 `;
 
 const Desc = styled.p`
@@ -24,6 +33,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-bottom: 20px;
 `;
 
 const FormGroup = styled.div`
@@ -61,16 +71,16 @@ const SubmitButton = styled.button`
     background-color: green;
   }
 `;
-const NewsletterContainer = styled.div`
-  margin-top: 20px;
-  text-align: center;
-`;
+
 
 const Contact = () => {
   return (
     <Container>
       <Title>Contact Us</Title>
-      <Desc>Do you have any questions? Fill out the form below, and we will get back to you as soon as possible.</Desc>
+      <Desc>
+        Do you have any questions? Fill out the form below, and we will get back to you as soon as
+        possible.
+      </Desc>
       <Form>
         <FormGroup>
           <Label htmlFor="name">Name:</Label>
@@ -86,9 +96,8 @@ const Contact = () => {
         </FormGroup>
         <SubmitButton type="submit">Send</SubmitButton>
       </Form>
-      <NewsletterContainer>
         <Newsletter />
-      </NewsletterContainer>
+      <Footer /> {/* Ändra här */}
     </Container>
   );
 };

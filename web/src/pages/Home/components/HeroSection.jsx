@@ -139,7 +139,7 @@ const ButtonLink = styled(Link)`
   }
 `;
 
-const HeroSection = ({ onOpenCategories }) => {
+const HeroSection = () => {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const handleClick = (direction) => {

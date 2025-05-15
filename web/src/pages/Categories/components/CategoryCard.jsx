@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   flex: 1;
@@ -39,21 +38,29 @@ const Title = styled.h1`
   margin-bottom: 20px;
 `;
 
-
+const ViewButton = styled.button`
+  padding: 10px 18px;
+  background: #fff;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: background 0.2s;
+  &:hover {
+    background: #eee;
+  }
+`;
 
 const CategoryCard = ({ name, image }) => {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(`/products/${name}`);
-  };
 
   return (
-    <Container onClick={handleClick}>
+    <Container>
       <Img src={image} alt={name} />
       <Info>
-        <Title>{name} </Title>
-  
+        <Title>{name}</Title>
       </Info>
     </Container>
   );

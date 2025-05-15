@@ -1,9 +1,3 @@
-
-export const getImageUrl = (category, imageName) => {
-  try {
-    return import(`../assets/images/products/${category}/${imageName}.png`).then(module => module.default);
-  } catch (error) {
-    console.error(`Error loading image for ${imageName}:`, error);
-    return '/path/to/fallback-image.png';  
-  }
-};
+export function getImageUrl(category, imageName) {
+  return `/assets/images/products/${category}/${imageName}`;
+}
