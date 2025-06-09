@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { useCart } from '../../contexts/CartContext';
-import { Link } from 'react-router-dom';
-import { Search, ShoppingCartOutlined } from '@mui/icons-material';
-import Badge from '@mui/material/Badge';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { useCart } from "../../contexts/CartContext";
+import { Link } from "react-router-dom";
+import { Search, ShoppingCartOutlined } from "@mui/icons-material";
+import Badge from "@mui/material/Badge";
 
 const NavbarContainer = styled.nav`
   height: 60px;
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 60px;
 
-   @media (max-width: 700px) {
+  @media (max-width: 700px) {
     flex-wrap: wrap;
     justify-content: center;
     height: auto;
@@ -38,17 +38,17 @@ const Left = styled.div`
   border-bottom-right-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
-@media (max-width: 700px) {
-  flex-basis: auto;
-  padding: 0;
-  background-color: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-}
+  @media (max-width: 700px) {
+    flex-basis: auto;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
 `;
 
 const SearchContainer = styled.div`
@@ -59,8 +59,8 @@ const SearchContainer = styled.div`
   background-color: white;
 
   @media (max-width: 700px) {
-  display: none;
-}
+    display: none;
+  }
 `;
 
 const Input = styled.input`
@@ -76,7 +76,7 @@ const CenterSpace = styled.div`
   justify-content: center;
   background-color: white;
 
-   @media (max-width: 700px) {
+  @media (max-width: 700px) {
     display: none;
   }
 `;
@@ -94,24 +94,23 @@ const Right = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 700px) {
-  flex-basis: auto;
-  padding: 0;
-  background-color: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-}
-
+    flex-basis: auto;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
 `;
 
 const Cart = styled.div`
   margin-left: 20px;
   position: relative;
 
-    @media (max-width: 700px) {
+  @media (max-width: 700px) {
     margin-left: 0;
     position: relative;
     top: 2px;
@@ -128,7 +127,7 @@ const Dropdown = styled.div`
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px;
-  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  display: ${(props) => (props.$isOpen ? "block" : "none")};
 `;
 
 const DropdownItem = styled.div`
@@ -211,20 +210,20 @@ const Navbar = () => {
           <ButtonLink to="/contact">CONTACT</ButtonLink>
           <SearchContainer>
             <Input placeholder="Search" />
-            <Search style={{ color: 'gray', fontSize: 20 }} />
+            <Search style={{ color: "gray", fontSize: 20 }} />
           </SearchContainer>
         </Left>
         <CenterSpace />
         <Right>
           <ButtonLink to="/login">LOG IN</ButtonLink>
           <Cart onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <Link to="/cart" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
               <Badge badgeContent={totalItems} color="primary">
                 <ShoppingCartOutlined />
               </Badge>
             </Link>
 
-            <Dropdown isOpen={isDropdownOpen}>
+            <Dropdown $isOpen={isDropdownOpen}>
               {cart.length === 0 ? (
                 <DropdownItem>Your cart is empty.</DropdownItem>
               ) : (
