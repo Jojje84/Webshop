@@ -1,10 +1,8 @@
 import React from 'react';
-
 import styled from 'styled-components';
 import CategoryCard from './CategoryCard';
 import { categories } from '../../../data/categories';
 import { useNavigate } from 'react-router-dom';
-import Newsletter from '../../components/Newsletter'; // Justera sökvägen om det behövs
 
 const Container = styled.div`
   padding: 20px;

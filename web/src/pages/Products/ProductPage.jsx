@@ -5,25 +5,60 @@ import styled from 'styled-components';
 import { useCart } from '../../contexts/CartContext';
 import { useStock } from '../../contexts/StockContext';
 import { imageMap } from '../../utils/imageMap';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div``;
+
+const BackButton = styled.button`
+  margin: 10px;
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
 
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+  }
 `;
 
 const ImgContainer = styled.img`
   width: 50%;
   height: 50vh;
   object-fit: cover;
+
+   @media (max-width: 700px) {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 10px;
+  }
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
+
+    @media (max-width: 700px) {
+    padding: 10px;
+  }
 `;
 
 const Title = styled.h1`
@@ -52,6 +87,11 @@ const AddContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
+
+    @media (max-width: 700px) {
+    width: 100%;
+    align-items: center;
+  }
 `;
 const AmountContainer = styled.div`
   display: flex;
@@ -114,6 +154,7 @@ const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
   const { getStockById } = useStock();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const foundProduct = products.find((prod) => prod.id === parseInt(id));
@@ -146,7 +187,7 @@ const ProductPage = () => {
     if (product) {
       if (quantity <= getStockById(product.id)) {
         addToCart(product, quantity);
-        // updateStock(product.id, -quantity); // <-- TA BORT DENNA RAD!
+      
       } else {
         alert('Inte tillräckligt med lager!');
       }
@@ -160,6 +201,7 @@ const ProductPage = () => {
 
   return (
     <Container>
+      <BackButton onClick={() => navigate(-1)}>← Back</BackButton>
       <Wrapper>
         <ImgContainer src={imageUrl} alt={product.name} />
         <InfoContainer>

@@ -14,6 +14,7 @@ const Container = styled.div`
     background-size: cover;
     background-position: center;
 
+    
 `;
 
 const Title = styled.h1`
@@ -37,6 +38,12 @@ const InputContainer = styled.div`
   justify-content: space-between;
   border: 0px solid lightgray;
   border-radius: 20px;
+
+    @media (max-width: 600px) {
+    width: 90vw;
+    min-width: 0;
+    height: 36px;
+  }
 `;
 
 const Input = styled.input`

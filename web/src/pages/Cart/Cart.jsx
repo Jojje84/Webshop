@@ -1,10 +1,10 @@
-import React from 'react';
-import { useCart } from '../../contexts/CartContext';
-import styled from 'styled-components';
-import { imageMap } from '../../utils/imageMap';
-import { useNavigate } from 'react-router-dom';
-import Newsletter from '../components/Newsletter';
-import Footer from '../components/Footer/Footer';
+import React from "react";
+import { useCart } from "../../contexts/CartContext";
+import styled from "styled-components";
+import { imageMap } from "../../utils/imageMap";
+import { useNavigate } from "react-router-dom";
+import Newsletter from "../components/Newsletter";
+import Footer from "../components/Footer/Footer";
 
 const Container = styled.div``;
 
@@ -17,7 +17,7 @@ const Title = styled.h1`
   color: #333;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 `;
@@ -51,6 +51,11 @@ const CartItem = styled.div`
   &:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px) scale(1.01);
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -117,6 +122,15 @@ const RemoveButton = styled.button`
   &:hover {
     background: #c40000;
   }
+
+  @media (max-width: 700px) {
+    align-self: center;
+    width: fit-content;
+    max-width: 90%;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
 `;
 
 const TotalContainer = styled.div`
@@ -179,8 +193,7 @@ const EmptyCart = styled.div`
 `;
 
 const Cart = () => {
-  const { cart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice, clearCart } =
-    useCart();
+  const { cart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice, clearCart } = useCart();
   const navigate = useNavigate();
 
   const handleRemoveAll = () => {
@@ -189,9 +202,7 @@ const Cart = () => {
   return (
     <Container>
       <Title>Your Cart</Title>
-      <CartSummary>
-        You have {cart.reduce((sum, item) => sum + item.quantity, 0)} items in your cart.
-      </CartSummary>
+      <CartSummary>You have {cart.reduce((sum, item) => sum + item.quantity, 0)} items in your cart.</CartSummary>
       {cart.length === 0 ? (
         <EmptyCart>Your cart is empty</EmptyCart>
       ) : (
@@ -199,10 +210,8 @@ const Cart = () => {
           {cart.map((product) => {
             // Hämta rätt bild-url från imageMap
             const categoryKey = product.category?.toLowerCase();
-            const imageKey = product.image?.endsWith('.png')
-              ? product.image
-              : `${product.image}.png`;
-            const imageUrl = imageMap[categoryKey]?.[imageKey] || '';
+            const imageKey = product.image?.endsWith(".png") ? product.image : `${product.image}.png`;
+            const imageUrl = imageMap[categoryKey]?.[imageKey] || "";
 
             return (
               <CartItem key={product.id}>
@@ -212,8 +221,7 @@ const Cart = () => {
                   <ItemInfo>
                     <span>{product.name}</span>
                     <ProductPrice>
-                      Price: {product.price} x {product.quantity} = $
-                      {(product.price * product.quantity).toFixed(2)}
+                      Price: {product.price} x {product.quantity} = ${(product.price * product.quantity).toFixed(2)}
                     </ProductPrice>
                     <AmountContainer>
                       <AmountButton onClick={() => decreaseQuantity(product.id)}>-</AmountButton>
@@ -234,9 +242,7 @@ const Cart = () => {
         </TotalContainer>
       )}
       <ButtonContainer>
-        <ContinueShoppingButton onClick={() => navigate('/categories')}>
-          Continue shopping
-        </ContinueShoppingButton>
+        <ContinueShoppingButton onClick={() => navigate("/categories")}>Continue shopping</ContinueShoppingButton>
         <RemoveAllButton onClick={handleRemoveAll}>Check out</RemoveAllButton>
       </ButtonContainer>
       <Newsletter />

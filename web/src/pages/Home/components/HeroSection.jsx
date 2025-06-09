@@ -11,6 +11,7 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   align-items: center;
+
 `;
 const Arrow = styled.div`
   width: 50px;
@@ -36,6 +37,8 @@ const Wrapper = styled.div`
   transition: all 1.5s ease;
   transform: translateX(${(props) => props.$slideIndex * -100}vw);
   align-items: center;
+
+
 `;
 
 const Slide = styled.div`
@@ -45,6 +48,10 @@ const Slide = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #${(props) => props.$bg};
+
+  @media (max-width: 700px) {
+  padding: 20px 0;
+}
 `;
 
 const ImgContainer = styled.div`
@@ -53,6 +60,13 @@ const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+   @media (max-width: 700px) {
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
 `;
 
 const Img = styled.img`
@@ -62,11 +76,19 @@ const Img = styled.img`
   display: block;
   justify-content: center;
   align-items: center;
+
+   @media (max-width: 700px) {
+  width: 70%;
+  }
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+
+  @media (max-width: 700px) {
+  padding: 10px;
+}
 `;
 
 const Title = styled.h1`
@@ -76,6 +98,11 @@ const Title = styled.h1`
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
+
+  @media (max-width: 700px) {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 `;
 
 const Desc = styled.p`
@@ -91,6 +118,12 @@ const Desc = styled.p`
   line-height: 1.5;
   text-transform: capitalize;
   font-style: italic;
+  
+  @media (max-width: 700px) {
+  font-size: 14px;
+  width: 85%;
+  margin: 10px auto;
+}
 `;
 const ButtonLink = styled(Link)`
  width: 200px;
@@ -137,7 +170,16 @@ const ButtonLink = styled(Link)`
     box-shadow: none;
     transform: none;
   }
+     @media (max-width: 700px) {
+    width: 140px;
+    height: 40px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
 `;
+
+
 
 const HeroSection = () => {
   const [slideIndex, setSlideIndex] = useState(0);

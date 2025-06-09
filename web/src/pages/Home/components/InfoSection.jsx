@@ -29,6 +29,12 @@ const Steps = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   margin: 50px;
+
+    @media (max-width: 700px) {
+    flex-direction: column;
+    margin: 20px 0;
+    gap: 0;
+  }
 `;
 
 const Ways = styled.div`
@@ -41,10 +47,24 @@ const Ways = styled.div`
   box-sizing: border-box;
   padding: 10px;
   margin-bottom: 50px;
+
+   @media (max-width: 700px) {
+    width: 100%;
+    flex-direction: column;
+    margin: 0 0 24px 0;
+    padding: 12px 0;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Info = styled.div`
   width: 55%;
+
+   @media (max-width: 700px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const StepTitle = styled.h2`

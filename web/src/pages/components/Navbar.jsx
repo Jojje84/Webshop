@@ -16,6 +16,14 @@ const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 60px;
+
+   @media (max-width: 700px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    padding: 10px;
+    gap: 6px;
+  }
 `;
 
 const Left = styled.div`
@@ -29,6 +37,18 @@ const Left = styled.div`
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+@media (max-width: 700px) {
+  flex-basis: auto;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
 `;
 
 const SearchContainer = styled.div`
@@ -37,6 +57,10 @@ const SearchContainer = styled.div`
   border: 1px solid lightgray;
   border-radius: 15px;
   background-color: white;
+
+  @media (max-width: 700px) {
+  display: none;
+}
 `;
 
 const Input = styled.input`
@@ -51,6 +75,10 @@ const CenterSpace = styled.div`
   display: flex;
   justify-content: center;
   background-color: white;
+
+   @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const Right = styled.div`
@@ -64,11 +92,30 @@ const Right = styled.div`
   padding-right: 10px;
   justify-content: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 700px) {
+  flex-basis: auto;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
 `;
 
 const Cart = styled.div`
   margin-left: 20px;
   position: relative;
+
+    @media (max-width: 700px) {
+    margin-left: 0;
+    position: relative;
+    top: 2px;
+  }
 `;
 
 const Dropdown = styled.div`
@@ -133,6 +180,12 @@ const ButtonLink = styled(Link)`
   &:active {
     transform: translateY(0);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 700px) {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 0;
   }
 `;
 
