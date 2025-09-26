@@ -1,95 +1,98 @@
 <h1 align='center'>Webshop 🛍️</h1>
 
-<p align="center">Ett enkelt webshop-projekt byggt med Vite, HTML, CSS och JavaScript. Projektet är tänkt som ett tränings-/läroprojekt för frontend-utveckling.</p>
+<p align="center">A simple webshop project built with Vite, HTML, CSS, and JavaScript. The project serves as a training/learning exercise for frontend development.</p>
 
 ---
 
-## Funktioner
+## Features
 
-- 🛒 Visa produkter
-- ➕ Lägg till produkter i kundvagn
-- 🗑️ Ta bort produkter från kundvagn
-- 💰 Se totalpris
+- 🛒 Display products  
+- ➕ Add products to shopping cart  
+- 🗑️ Remove products from shopping cart  
+- 💰 View total price  
 
-(Utöka listan beroende på vad du bygger in framöver)
-
----
-
-## Teknologier
-
-- Vite – utvecklingsserver och byggverktyg
-- JavaScript (ES6+) – logik
-- HTML5 – struktur
-- CSS3 – styling
-- npm – pakethanterare för beroenden och scripts
+*(Extend this list as you add more features)*  
 
 ---
 
-## Projektstruktur
+## Technologies
+
+- **Vite** – development server and build tool  
+- **JavaScript (ES6+)** – logic  
+- **HTML5** – structure  
+- **CSS3** – styling  
+- **npm** – package manager for dependencies and scripts  
+
+---
+
+## Project Structure
 
 ```
 Webshop/
-├── public/            # Statiska filer
-├── src/               # Källkod
-│   ├── components/    # Återanvändbara delar (om du lägger till)
-│   ├── assets/        # Bilder, ikoner, CSS
-│   └── main.js        # Huvudfil
-├── index.html         # Startsida
-├── package.json       # Beroenden och scripts
-├── vite.config.js     # Vite-konfiguration
-└── README.md          # Dokumentation
+├── public/            # Static files
+├── src/               # Source code
+│   ├── components/    # Reusable components (if added)
+│   ├── assets/        # Images, icons, CSS
+│   └── main.js        # Entry point
+├── index.html         # Main page
+├── package.json       # Dependencies and scripts
+├── vite.config.js     # Vite configuration
+└── README.md          # Documentation
 ```
 
 ---
 
 ## Installation
 
-1. Klona repot:
+1. Clone the repository: 
 ```
 git clone https://github.com/Jojje84/Webshop.git
 cd Webshop
 ```
 
-2. Installera beroenden:
+2. Install dependencies:
 ```
 npm install
 ```
 
-3. Starta utvecklingsservern:
+3. Start the development server:
 ```
 npm run dev
 ```
 
-4. Öppna i webbläsaren:
+4. Open in your browser:
 
 - http://localhost:5173
 
 ---
 
-## Bygg för produktion
+## Build for Production
 ```
 npm run build
 ```
 
-Skapar en dist/-mapp med optimerade filer.
+Creates a dist/ folder with optimized files.
 
-För att testa bygget lokalt:
+To preview the production build locally:
 ```
 npm run preview
 ```
 
 ---
 
-## Skärmbilder
+## Screenshots
 
 - Homepage
 ![homepage-sida](screenshots/homepage.png)
 
 ---
 
-## Kontakt
+## Contact
 
 👤 Jorge
 
-- GitHub: [Jojje84](https://github.com/Jojje84)
-- E-post: [jorgeavilas@icloud.com](mailto:jorgeavilas@icloud.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?logo=github&logoColor=white)](https://github.com/Jojje84) 
+&nbsp;
+[![Email](https://img.shields.io/badge/Email-Contact-blue?logo=icloud&logoColor=white)](mailto:jorgeavilas@icloud.com) 
+&nbsp;
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jorge-avila-35622030/)
