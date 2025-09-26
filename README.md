@@ -26,6 +26,7 @@
 ---
 
 ## Projektstruktur
+
 ´´´
 Webshop/
 ├── public/            # Statiska filer
