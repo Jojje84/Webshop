@@ -27,7 +27,7 @@
 
 ## Projektstruktur
 
-´´´
+```
 Webshop/
 ├── public/            # Statiska filer
 ├── src/               # Källkod
@@ -38,28 +38,27 @@ Webshop/
 ├── package.json       # Beroenden och scripts
 ├── vite.config.js     # Vite-konfiguration
 └── README.md          # Dokumentation
-´´´
+```
 
 ---
 
 ## Installation
 
 1. Klona repot:
-´´´
+```
 git clone https://github.com/Jojje84/Webshop.git
 cd Webshop
-´´´
+```
 
 2. Installera beroenden:
-´´´
+```
 npm install
-´´´
+```
 
 3. Starta utvecklingsservern:
-´´´
+```
 npm run dev
-
-´´´
+```
 
 4. Öppna i webbläsaren:
 
@@ -68,16 +67,16 @@ npm run dev
 ---
 
 ## Bygg för produktion
-´´´
+```
 npm run build
-´´´
+```
 
 Skapar en dist/-mapp med optimerade filer.
 
 För att testa bygget lokalt:
-´´´
+```
 npm run preview
-´´´
+```
 
 ---
 
