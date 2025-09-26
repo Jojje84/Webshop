@@ -1,12 +1,88 @@
-# React + Vite
+<h1 align='center'>Webshop 🛍️</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">Ett enkelt webshop-projekt byggt med Vite, HTML, CSS och JavaScript. Projektet är tänkt som ett tränings-/läroprojekt för frontend-utveckling.</p>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funktioner
 
-## Expanding the ESLint configuration
+- 🛒 Visa produkter
+- ➕ Lägg till produkter i kundvagn
+- 🗑️ Ta bort produkter från kundvagn
+- 💰 Se totalpris
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+(Utöka listan beroende på vad du bygger in framöver)
+
+---
+
+## Teknologier
+
+- Vite – utvecklingsserver och byggverktyg
+- JavaScript (ES6+) – logik
+- HTML5 – struktur
+- CSS3 – styling
+- npm – pakethanterare för beroenden och scripts
+
+---
+
+## Projektstruktur
+´´´
+Webshop/
+├── public/            # Statiska filer
+├── src/               # Källkod
+│   ├── components/    # Återanvändbara delar (om du lägger till)
+│   ├── assets/        # Bilder, ikoner, CSS
+│   └── main.js        # Huvudfil
+├── index.html         # Startsida
+├── package.json       # Beroenden och scripts
+├── vite.config.js     # Vite-konfiguration
+└── README.md          # Dokumentation
+´´´
+
+---
+
+## Installation
+
+1. Klona repot:
+´´´
+git clone https://github.com/Jojje84/Webshop.git
+cd Webshop
+´´´
+
+2. Installera beroenden:
+´´´
+npm install
+´´´
+
+3. Starta utvecklingsservern:
+´´´
+npm run dev
+
+´´´
+
+4. Öppna i webbläsaren:
+
+- http://localhost:5173
+
+---
+
+## Bygg för produktion
+´´´
+npm run build
+´´´
+
+Skapar en dist/-mapp med optimerade filer.
+
+För att testa bygget lokalt:
+´´´
+npm run preview
+´´´
+
+---
+
+## Kontakt
+
+👤 Jorge
+
+- GitHub: [Jojje84](https://github.com/Jojje84)
+- E-post: [jorgeavilas@icloud.com](mailto:jorgeavilas@icloud.com)
