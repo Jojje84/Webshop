@@ -80,6 +80,13 @@ npm run preview
 
 ---
 
+## Skärmbilder
+
+- Homepage
+![homepage-sida](screenshots/homepage.png)
+
+---
+
 ## Kontakt
 
 👤 Jorge
