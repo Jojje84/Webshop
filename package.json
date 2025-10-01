@@ -1,8 +1,15 @@
 {
-  "name": "web",
+  "name": "webshop",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Advanced React E-commerce Application with shopping cart and product management",
+  "author": "Jorge Avila <jorgeavilas@icloud.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jojje84/Webshop.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

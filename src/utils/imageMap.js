@@ -1,3 +1,14 @@
+/*
+ * Webshop - Advanced React E-commerce Application
+ * Copyright (c) 2025 Jorge Avila
+ * Author: Jorge Avila (jorgeavilas@icloud.com)
+ * Repository: https://github.com/Jojje84/Webshop
+ * License: MIT License - see LICENSE file for details
+ * 
+ * React-based e-commerce platform with shopping cart and product management.
+ * Original code by Jorge Avila - please maintain attribution.
+ */
+
 import abstract1 from '../assets/images/products/abstract/abstract1.png';
 import abstract2 from '../assets/images/products/abstract/abstract2.png';
 import abstract3 from '../assets/images/products/abstract/abstract3.png';
